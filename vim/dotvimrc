@@ -1,0 +1,35 @@
+set nu
+syn on
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set mouse=a
+set autoindent
+set smartindent
+
+"window commands
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+
+"tab commands
+map <C-S-]> gt
+map <C-S-[> gT
+map <C-1> 1gt
+map <C-2> 2gt
+map <C-3> 3gt
+map <C-4> 4gt
+map <C-5> 5gt
+map <C-6> 6gt
+map <C-7> 7gt
+map <C-8> 8gt
+map <C-9> 9gt
+map <C-0> :tablast<CR> 
+
+"Plugins and phatogen
+call pathogen#infect()
+map <F2> :NERDTreeToggle<CR>
