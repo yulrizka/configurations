@@ -3,9 +3,11 @@ syn on
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set expandtab
 set mouse=a
 set autoindent
 set smartindent
+set pastetoggle=<F3>
 
 "window commands
 map <C-h> <C-w>h
@@ -14,6 +16,9 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+map  <F12> :set hls!<CR>
+imap <F12> <ESC>:set hls!<CR>a
+vmap <F12> <ESC>:set hls!<CR>gv
 
 
 "tab commands
@@ -33,3 +38,4 @@ map <C-0> :tablast<CR>
 "Plugins and phatogen
 call pathogen#infect()
 map <F2> :NERDTreeToggle<CR>
+
