@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/data/sense/sense_console'
 let g:netrw_dirhist_2='/opt/android-sdk-linux/extras/google/gcm/gcm-client/src'
 let g:netrw_dirhist_3='/data/sense/sense_client'
+let g:netrw_dirhist_4='/home/vagrant/commonsensephp/restful'

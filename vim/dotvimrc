@@ -8,6 +8,7 @@ set mouse=a
 set autoindent
 set smartindent
 set pastetoggle=<F3>
+set ttymouse=xterm2
 
 "window commands
 map <C-h> <C-w>h
@@ -38,4 +39,11 @@ map <C-0> :tablast<CR>
 "Plugins and phatogen
 call pathogen#infect()
 map <F2> :NERDTreeToggle<CR>
+
+if $TERM =~ '^screen-256color'
+    map <Esc>OH <Home>
+    map! <Esc>OH <Home>
+    map <Esc>OF <End>
+    map! <Esc>OF <End>
+endif
 
