@@ -7,3 +7,9 @@
 [submodule "vim/dotvim/bundle/vim-surround"]
 	path = vim/dotvim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/dotvim/bundle/vim-rails"]
+	path = vim/dotvim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "vim/dotvim/bundle/vim-endwise"]
+	path = vim/dotvim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git

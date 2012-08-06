@@ -5,10 +5,14 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set mouse=a
-set autoindent
 set smartindent
+set autoindent
 set pastetoggle=<F3>
 set ttymouse=xterm2
+
+syntax on
+filetype on
+filetype plugin indent on
 
 "window commands
 map <C-h> <C-w>h
@@ -46,4 +50,3 @@ if $TERM =~ '^screen-256color'
     map <Esc>OF <End>
     map! <Esc>OF <End>
 endif
-
