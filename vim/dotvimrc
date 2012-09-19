@@ -5,6 +5,7 @@ set smartindent
 set autoindent
 set pastetoggle=<F3>
 set ttymouse=xterm2
+set encoding=utf-8
 
 " virtual tabstops using spaces
 set tabstop=4
