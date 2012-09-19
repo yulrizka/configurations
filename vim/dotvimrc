@@ -1,14 +1,31 @@
 set nu
 syn on
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
 set mouse=a
 set smartindent
 set autoindent
 set pastetoggle=<F3>
 set ttymouse=xterm2
+
+" virtual tabstops using spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+" allow toggling between local and default mode
+function TabToggle()
+  if &expandtab
+    set shiftwidth=4
+    set softtabstop=4
+    set tabstop=4
+    set noexpandtab
+  else
+    set shiftwidth=2
+    set softtabstop=2
+    set tabstop=2
+    set expandtab
+  endif
+endfunction
+nmap <F9> mz:execute TabToggle()<CR>'z
 
 syntax on
 filetype on
