@@ -6,6 +6,7 @@ set autoindent
 set ttymouse=xterm2
 set encoding=utf-8
 highlight ColorColumn ctermbg=7
+set listchars=tab:▸\ ,eol:¬
 
 " virtual tabstops using spaces
 set tabstop=2
@@ -40,6 +41,18 @@ function TabToggle()
 	echo 'expandtab'
   endif
 endfunction
+
+" toogle list and nolist character
+function ListToggle()
+	if &list
+		set nolist
+		echo 'nolist'
+	else
+		set list
+		echo 'list'
+	endif
+endfunction
+nnoremap <silent> <leader>l :call ListToggle()<CR>
 
 " Function to toggle color column
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
