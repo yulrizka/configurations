@@ -1,14 +1,18 @@
 set nu
 syn on
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
 set mouse=a
 set smartindent
 set autoindent
-set pastetoggle=<F3>
 set ttymouse=xterm2
+set encoding=utf-8
+highlight ColorColumn ctermbg=7
+set listchars=tab:▸\ ,eol:¬
+
+" virtual tabstops using spaces
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set noexpandtab
 
 syntax on
 filetype on
@@ -20,11 +24,58 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+"Plugins and phatogen
+call pathogen#infect()
+
+""
+" FUNCTIONS 
+""
+
+" allow toggling between local and default mode
+function TabToggle()
+  if &expandtab
+    set noexpandtab
+	echo 'noexpandtab'
+  else
+    set expandtab
+	echo 'expandtab'
+  endif
+endfunction
+
+" toogle list and nolist character
+function ListToggle()
+	if &list
+		set nolist
+		echo 'nolist'
+	else
+		set list
+		echo 'list'
+	endif
+endfunction
+nnoremap <silent> <leader>l :call ListToggle()<CR>
+
+" Function to toggle color column
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+function! g:ToggleColorColumn()
+  if &colorcolumn != ''
+    setlocal colorcolumn&
+		match OverLength //
+  else
+    setlocal colorcolumn=80
+		match OverLength /\%121v.*/
+  endif
+endfunction
+nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
+
+
+map <F2> :NERDTreeToggle<CR>
+set pastetoggle=<F3>
+nmap <F9> mz:execute TabToggle()<CR>'z
 map  <F12> :set hls!<CR>
 imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
 
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 "tab commands
 map <C-S-]> gt
@@ -40,9 +91,6 @@ map <C-8> 8gt
 map <C-9> 9gt
 map <C-0> :tablast<CR> 
 
-"Plugins and phatogen
-call pathogen#infect()
-map <F2> :NERDTreeToggle<CR>
 
 if $TERM =~ '^screen-256color'
     map <Esc>OH <Home>
