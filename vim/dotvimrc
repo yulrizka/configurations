@@ -7,6 +7,7 @@ set ttymouse=xterm2
 set encoding=utf-8
 highlight ColorColumn ctermbg=7
 set listchars=tab:▸\ ,eol:¬
+set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
 " virtual tabstops using spaces
 set tabstop=2
@@ -76,6 +77,17 @@ imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+"Fuzzy finder binding
+let g:fuf_modesDisable = []
+let g:fuf_mrufile_maxItem = 1000
+let g:fuf_mrucmd_maxItem = 400
+let g:fuf_mrufile_exclude = '\v\~$|\.(bak|sw[po])$|^(\/\/|\\\\|\/mnt\/)'
+nnoremap <silent> <C-n>      :FufBuffer<CR>
+nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
+nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
+nnoremap <silent> <C-f>p     :FufFile<CR>
+
 
 "tab commands
 map <C-S-]> gt
