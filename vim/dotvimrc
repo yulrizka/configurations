@@ -6,8 +6,9 @@ set autoindent
 set ttymouse=xterm2
 set encoding=utf-8
 highlight ColorColumn ctermbg=7
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:·\ ,eol:¬
 set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set list
 
 " virtual tabstops using spaces
 set tabstop=2
