@@ -15,4 +15,4 @@
 	url = https://github.com/tpope/vim-endwise.git
 [submodule "zsh/dotoh-my-zsh"]
 	path = zsh/dotoh-my-zsh
-	url = git@github.com:yulrizka/oh-my-zsh.git
+	url = https://github.com/yulrizka/oh-my-zsh.git
