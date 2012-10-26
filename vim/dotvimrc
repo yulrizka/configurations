@@ -10,6 +10,16 @@ set listchars=tab:·\ ,eol:¬
 set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set list
 
+" vundle
+set nocompatible 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+filetype plugin indent on
+
+
 " virtual tabstops using spaces
 set tabstop=2
 set softtabstop=2
@@ -17,8 +27,6 @@ set shiftwidth=2
 set noexpandtab
 
 syntax on
-filetype on
-filetype plugin indent on
 
 "window commands
 map <C-h> <C-w>h
