@@ -16,3 +16,6 @@
 [submodule "zsh/dotoh-my-zsh"]
 	path = zsh/dotoh-my-zsh
 	url = https://github.com/yulrizka/oh-my-zsh.git
+[submodule "vim/dotvim/bundle/vundle"]
+	path = vim/dotvim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
