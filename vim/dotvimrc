@@ -3,34 +3,31 @@ syn on
 set mouse=a
 set smartindent
 set autoindent
-set pastetoggle=<F3>
 set ttymouse=xterm2
 set encoding=utf-8
+colorscheme Tomorrow-Night
+set t_Co=256
+set listchars=tab:·\ ,eol:¬
+set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set list
+
+" vundle
+set nocompatible 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+filetype plugin indent on
+
 
 " virtual tabstops using spaces
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set noexpandtab
-" allow toggling between local and default mode
-function TabToggle()
-  if &expandtab
-    set shiftwidth=4
-    set softtabstop=4
-    set tabstop=4
-    set noexpandtab
-  else
-    set shiftwidth=2
-    set softtabstop=2
-    set tabstop=2
-    set expandtab
-  endif
-endfunction
-nmap <F9> mz:execute TabToggle()<CR>'z
 
 syntax on
-filetype on
-filetype plugin indent on
 
 "window commands
 map <C-h> <C-w>h
@@ -38,10 +35,68 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+"Plugins and phatogen
+call pathogen#infect()
+
+""
+" FUNCTIONS 
+""
+
+" allow toggling between local and default mode
+function TabToggle()
+  if &expandtab
+    set noexpandtab
+	echo 'noexpandtab'
+  else
+    set expandtab
+	echo 'expandtab'
+  endif
+endfunction
+
+" toogle list and nolist character
+function ListToggle()
+	if &list
+		set nolist
+		echo 'nolist'
+	else
+		set list
+		echo 'list'
+	endif
+endfunction
+nnoremap <silent> <leader>l :call ListToggle()<CR>
+
+" Function to toggle color column
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+function! g:ToggleColorColumn()
+  if &colorcolumn != ''
+    setlocal colorcolumn&
+		match OverLength //
+  else
+    setlocal colorcolumn=80
+		match OverLength /\%121v.*/
+  endif
+endfunction
+nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
+
+
+map <F2> :NERDTreeToggle<CR>
+set pastetoggle=<F3>
+nmap <F9> mz:execute TabToggle()<CR>'z
 map  <F12> :set hls!<CR>
 imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
+
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+"Fuzzy finder binding
+let g:fuf_modesDisable = []
+let g:fuf_mrufile_maxItem = 1000
+let g:fuf_mrucmd_maxItem = 400
+let g:fuf_mrufile_exclude = '\v\~$|\.(bak|sw[po])$|^(\/\/|\\\\|\/mnt\/)'
+nnoremap <silent> <C-n>      :FufBuffer<CR>
+nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
+nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
+nnoremap <silent> <C-f>p     :FufFile<CR>
 
 
 "tab commands
@@ -58,9 +113,6 @@ map <C-8> 8gt
 map <C-9> 9gt
 map <C-0> :tablast<CR> 
 
-"Plugins and phatogen
-call pathogen#infect()
-map <F2> :NERDTreeToggle<CR>
 
 if $TERM =~ '^screen-256color'
     map <Esc>OH <Home>
