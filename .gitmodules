@@ -25,3 +25,6 @@
 [submodule "vim/dotvim/bundle/vim-cofee-script"]
 	path = vim/dotvim/bundle/vim-cofee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/dotvim/bundle/vim-easymotion"]
+	path = vim/dotvim/bundle/vim-easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
