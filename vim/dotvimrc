@@ -8,7 +8,7 @@ set encoding=utf-8
 colorscheme Tomorrow-Night
 set t_Co=256
 set listchars=tab:·\ ,eol:¬
-set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set statusline=%<\ %n:%f\ %m%r%y\ %{fugitive#statusline()}%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set list
 
 " vundle
@@ -33,7 +33,7 @@ map <C-l> <C-w>l
 call pathogen#infect()
 
 ""
-" FUNCTIONS 
+" FUNCTIONS
 ""
 
 " allow toggling between local and default mode
@@ -58,6 +58,22 @@ function ListToggle()
 	endif
 endfunction
 nnoremap <silent> <leader>l :call ListToggle()<CR>
+
+" Highlight trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+let g:highlightWhitespace = 0
+function! g:ToggleHighlightWhitespace()
+  if g:highlightWhitespace
+    let g:highlightWhitespace = 0
+    match ExtraWhitespace //
+  else
+    let g:highlightWhitespace = 1
+    match ExtraWhitespace /\S\zs\s\+$/
+  endif
+endfunction
+nnoremap <silent> <leader>hw :call g:ToggleHighlightWhitespace()<CR>
+
+call g:ToggleHighlightWhitespace()
 
 " Function to toggle color column
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -105,7 +121,7 @@ map <C-6> 6gt
 map <C-7> 7gt
 map <C-8> 8gt
 map <C-9> 9gt
-map <C-0> :tablast<CR> 
+map <C-0> :tablast<CR>
 
 
 if $TERM =~ '^screen-256color'
@@ -113,4 +129,10 @@ if $TERM =~ '^screen-256color'
     map! <Esc>OH <Home>
     map <Esc>OF <End>
     map! <Esc>OF <End>
+endif
+
+" Fugitive
+if has("autocmd")
+	autocmd User fugitive\ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' | nnoremap <buffer> .. :edit %:h<CR> | endif
+	autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
