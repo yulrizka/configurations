@@ -12,12 +12,6 @@ set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l
 set list
 
 " vundle
-set nocompatible 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
 filetype plugin indent on
 
 
