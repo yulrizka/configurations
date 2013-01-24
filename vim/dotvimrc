@@ -8,7 +8,7 @@ set encoding=utf-8
 colorscheme Tomorrow-Night
 set t_Co=256
 set listchars=tab:·\ ,eol:¬
-set statusline=%<\ %n:%f\ %m%r%y\ %{fugitive#statusline()}%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set list
 
 " vundle
@@ -37,7 +37,7 @@ call pathogen#infect()
 ""
 
 " allow toggling between local and default mode
-function TabToggle()
+function! TabToggle()
   if &expandtab
     set noexpandtab
 	echo 'noexpandtab'
@@ -48,7 +48,7 @@ function TabToggle()
 endfunction
 
 " toogle list and nolist character
-function ListToggle()
+function! ListToggle()
 	if &list
 		set nolist
 		echo 'nolist'
@@ -90,7 +90,6 @@ function! g:ToggleColorColumn()
   endif
 endfunction
 nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
-
 
 map <F2> :NERDTreeToggle<CR>
 set pastetoggle=<F3>
@@ -148,24 +147,10 @@ let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 
-" tab navigation
-" for linux and windows users (using the control key)
-map <C-S-]> gt
-map <C-S-[> gT
-map <C-1> 1gt
-map <C-2> 2gt
-map <C-3> 3gt
-map <C-4> 4gt
-map <C-5> 5gt
-map <C-6> 6gt
-map <C-7> 7gt
-map <C-8> 8gt
-map <C-9> 9gt
-map <C-0> :tablast<CR>
-
 " folding
 nnoremap <Space> za
 vnoremap <Space> za
 
 "Commands
-command W w !sudo tee %
+command! W w !sudo tee %
+command! CheckWhitespace %s/\s\+$//gc
