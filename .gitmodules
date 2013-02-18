@@ -34,3 +34,6 @@
 [submodule "vim/dotvim/bundle/puppet"]
 	path = vim/dotvim/bundle/puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule "vim/dotvim/bundle/align"]
+	path = vim/dotvim/bundle/align
+	url = https://github.com/vim-scripts/Align.git
