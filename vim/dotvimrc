@@ -154,3 +154,7 @@ vnoremap <Space> za
 "Commands
 command! W w !sudo tee %
 command! CheckWhitespace %s/\s\+$//gc
+
+" Copy paste from clipboard (xclip) must be enabled
+vmap "+y :!xclip -f -sel clip<CR>
+map "+p :!xclip -o -sel clip<CR>
