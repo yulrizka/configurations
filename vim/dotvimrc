@@ -10,6 +10,14 @@ set t_Co=256
 set listchars=tab:·\ ,eol:¬
 set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set list
+let mapleader=','
+
+" restor cursor position
+autocmd BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
+
 
 " vundle
 filetype plugin indent on
@@ -19,7 +27,7 @@ filetype plugin indent on
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 
 syntax on
 
@@ -154,6 +162,17 @@ vnoremap <Space> za
 "Commands
 command! W w !sudo tee %
 command! CheckWhitespace %s/\s\+$//gc
+
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
+
+nnoremap <leader>= :Align<CR>
+vnoremap <leader>= :Align<CR>
 
 " Copy paste from clipboard (xclip) must be enabled
 vmap "+y :!xclip -f -sel clip<CR>
