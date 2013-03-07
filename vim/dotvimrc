@@ -11,7 +11,16 @@ set listchars=tab:·\ ,eol:¬
 set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set list
 let mapleader=','
-
+set history=10000
+set ignorecase smartcase
+set cursorline
+set cmdheight=2
+set winwidth=79
+ 
+" store temporary file in central directory
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " restor cursor position
 autocmd BufReadPost *
       \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -21,7 +30,6 @@ autocmd BufReadPost *
 
 " vundle
 filetype plugin indent on
-
 
 " virtual tabstops using spaces
 set tabstop=2
