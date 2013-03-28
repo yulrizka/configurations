@@ -108,6 +108,9 @@ function! g:ToggleColorColumn()
 endfunction
 nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
 
+" Function to toogle vertical line
+nnoremap <silent> <leader>vl :set cursorcolumn!<CR>
+
 map <F2> :NERDTreeToggle<CR>
 set pastetoggle=<F3>
 map <F5> <Esc>:EnableFastPHPFolds<CR>:let g:DisableAutoPHPFolding = 0<CR>
