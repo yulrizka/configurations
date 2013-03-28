@@ -34,3 +34,6 @@
 [submodule "vim/dotvim/bundle/command-t"]
 	path = vim/dotvim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "vim/dotvim/bundle/ag.vim"]
+	path = vim/dotvim/bundle/ag.vim
+	url = https://github.com/rking/ag.vim
