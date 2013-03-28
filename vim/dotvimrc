@@ -53,17 +53,6 @@ call pathogen#infect()
 " FUNCTIONS
 ""
 
-" allow toggling between local and default mode
-function! TabToggle()
-  if &expandtab
-    set noexpandtab
-	echo 'noexpandtab'
-  else
-    set expandtab
-	echo 'expandtab'
-  endif
-endfunction
-
 " toogle list and nolist character
 function! ListToggle()
 	if &list
@@ -113,7 +102,7 @@ set pastetoggle=<F3>
 map <F5> <Esc>:EnableFastPHPFolds<CR>:let g:DisableAutoPHPFolding = 0<CR>
 map <F6> <Esc>:EnablePHPFolds<CR>:let g:DisableAutoPHPFolding = 0<CR>
 map <F7> <Esc>:DisablePHPFolds<CR>:let g:DisableAutoPHPFolding = 1<CR>
-nmap <F9> mz:execute TabToggle()<CR>'z
+nmap <F9> :set expandtab!<CR>
 map  <F12> :set hls!<CR>
 imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
