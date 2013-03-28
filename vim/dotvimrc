@@ -9,6 +9,7 @@ colorscheme Tomorrow-Night
 set t_Co=256
 set listchars=tab:·\ ,eol:¬
 set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set laststatus=2
 set list
 let mapleader=','
 set history=10000
@@ -16,7 +17,7 @@ set ignorecase smartcase
 set cursorline
 set cmdheight=2
 set winwidth=79
- 
+
 " store temporary file in central directory
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -245,7 +246,7 @@ function! RunTests(filename)
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CommandT 
+" CommandT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
