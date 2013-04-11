@@ -146,10 +146,12 @@ if $TERM =~ '^screen-256color'
 endif
 
 " Fugitive
-if has("autocmd")
-	autocmd User fugitive\ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' | nnoremap <buffer> .. :edit %:h<CR> | endif
-	autocmd BufReadPost fugitive://* set bufhidden=delete
-endif
+autocmd User Fugitive
+      \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+      \   nnoremap <buffer> .. :edit %:h<CR> |
+      \ endif
+
+autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " ctags
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
