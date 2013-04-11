@@ -37,3 +37,6 @@
 [submodule "vim/dotvim/bundle/ag.vim"]
 	path = vim/dotvim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim
+[submodule "vim/dotvim/bundle/vim-unimpaired"]
+	path = vim/dotvim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
