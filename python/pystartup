@@ -35,7 +35,7 @@ def save_history(historyPath=historyPath, endMarkerStr=endMarkerStr):
     open(historyPath, 'w+').write(''.join(lines))
 
 if os.path.exists(historyPath):
-    readline.read_history_file(maxhistoryPath)
+    readline.read_history_file(historyPath)
 
 atexit.register(save_history)
 
