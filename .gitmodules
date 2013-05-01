@@ -40,3 +40,6 @@
 [submodule "vim/dotvim/bundle/vim-unimpaired"]
 	path = vim/dotvim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim/dotvim/bundle/jedi-vim"]
+	path = vim/dotvim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
