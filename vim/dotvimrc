@@ -164,11 +164,13 @@ vnoremap <Space> za
 
 "Commands
 command! W w !sudo tee %
-command! CheckWhitespace %s/\s\+$//gc
+command! -range=% CheckWhitespace <line1>,<line2>s/\s\+$//gc
 
 " delete without yanking
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
+nnoremap <leader>D "_D
+vnoremap <leader>D "_D
 
 " replace currently selected text with default register
 " without yanking it
@@ -300,4 +302,3 @@ function! QuickfixFilenames()
   endfor
   return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 endfunction
-
