@@ -10,6 +10,9 @@ set t_Co=256
 set listchars=tab:·\ ,eol:¬
 set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set laststatus=2
+set showmatch
+set incsearch
+set hlsearch
 set list
 let mapleader=','
 set history=10000
@@ -111,6 +114,7 @@ imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+map <leader>n :noh<CR>
 
 "Fuzzy finder binding
 let g:fuf_modesDisable = []
