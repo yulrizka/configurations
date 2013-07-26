@@ -43,6 +43,9 @@ set expandtab
 
 syntax on
 
+" scroll
+set scrolloff=3
+
 "window commands
 map <C-h> <C-w>h
 map <C-j> <C-w>j
