@@ -51,9 +51,17 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
 "Plugins and phatogen
 call pathogen#infect()
+
+" Can't be bothered to understand ESC vs <c-c> in insert mode
+imap <c-c> <esc>
+" Clear the search buffer when hitting return
+function! MapCR()
+  nnoremap <cr> :nohlsearch<cr>
+endfunction
+call MapCR()
+nnoremap <leader><leader> <c-^>
 
 ""
 " FUNCTIONS
@@ -116,8 +124,6 @@ map  <F12> :set hls!<CR>
 imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
 
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-map <leader>n :noh<CR>
 
 "Fuzzy finder binding
 let g:fuf_modesDisable = []
