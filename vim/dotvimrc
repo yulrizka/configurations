@@ -25,14 +25,13 @@ set winwidth=79
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
 " restor cursor position
 autocmd BufReadPost *
       \ if line("'\"") > 1 && line("'\"") <= line("$") |
       \   exe "normal! g`\"" |
       \ endif
 
-
-" vundle
 filetype plugin indent on
 
 " virtual tabstops using spaces
@@ -51,6 +50,68 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Function to toogle vertical line
+nnoremap <silent> <leader>vl :set cursorcolumn!<CR>
+
+map <F2> :NERDTreeToggle<CR>
+set pastetoggle=<F3>
+map <F5> <Esc>:EnableFastPHPFolds<CR>:let g:DisableAutoPHPFolding = 0<CR>
+map <F6> <Esc>:EnablePHPFolds<CR>:let g:DisableAutoPHPFolding = 0<CR>
+map <F7> <Esc>:DisablePHPFolds<CR>:let g:DisableAutoPHPFolding = 1<CR>
+nmap <F9> :set expandtab!<CR>
+map  <F12> :set hls!<CR>
+imap <F12> <ESC>:set hls!<CR>a
+vmap <F12> <ESC>:set hls!<CR>gv
+
+" folding
+nnoremap <Space> za
+vnoremap <Space> za
+
+nnoremap <silent> <C-n>      :FufBuffer<CR>
+nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
+nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
+nnoremap <silent> <C-f>p     :FufFile<CR>
+
+"tab commands
+map <C-S-]> gt
+map <C-S-[> gT
+map <C-1> 1gt
+map <C-2> 2gt
+map <C-3> 3gt
+map <C-4> 4gt
+map <C-5> 5gt
+map <C-6> 6gt
+map <C-7> 7gt
+map <C-8> 8gt
+map <C-9> 9gt
+map <C-0> :tablast<CR>
+
+"Commands
+command! W w !sudo tee %
+command! -range=% CheckWhitespace <line1>,<line2>s/\s\+$//gc
+command! Q q
+
+"save
+map <leader>s :w<CR>
+imap <leader>s :w<CR>
+
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+nnoremap <leader>D "_D
+vnoremap <leader>D "_D
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
+
+nnoremap <leader>= :Align<CR>
+vnoremap <leader>= :Align<CR>
+
+" Copy paste from clipboard (xclip) must be enabled
+vmap "+y :!xclip -f -sel clip<CR>
+map "+p :!xclip -o -sel clip<CR>
 "Plugins and phatogen
 call pathogen#infect()
 
@@ -66,7 +127,6 @@ nnoremap <leader><leader> <c-^>
 ""
 " FUNCTIONS
 ""
-
 " toogle list and nolist character
 function! ListToggle()
 	if &list
@@ -111,45 +171,11 @@ function! g:ToggleColorColumn()
 endfunction
 nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
 
-" Function to toogle vertical line
-nnoremap <silent> <leader>vl :set cursorcolumn!<CR>
-
-map <F2> :NERDTreeToggle<CR>
-set pastetoggle=<F3>
-map <F5> <Esc>:EnableFastPHPFolds<CR>:let g:DisableAutoPHPFolding = 0<CR>
-map <F6> <Esc>:EnablePHPFolds<CR>:let g:DisableAutoPHPFolding = 0<CR>
-map <F7> <Esc>:DisablePHPFolds<CR>:let g:DisableAutoPHPFolding = 1<CR>
-nmap <F9> :set expandtab!<CR>
-map  <F12> :set hls!<CR>
-imap <F12> <ESC>:set hls!<CR>a
-vmap <F12> <ESC>:set hls!<CR>gv
-
-
 "Fuzzy finder binding
 let g:fuf_modesDisable = []
 let g:fuf_mrufile_maxItem = 1000
 let g:fuf_mrucmd_maxItem = 400
 let g:fuf_mrufile_exclude = '\v\~$|\.(bak|sw[po])$|^(\/\/|\\\\|\/mnt\/)'
-nnoremap <silent> <C-n>      :FufBuffer<CR>
-nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
-nnoremap <silent> <C-f>p     :FufFile<CR>
-
-
-"tab commands
-map <C-S-]> gt
-map <C-S-[> gT
-map <C-1> 1gt
-map <C-2> 2gt
-map <C-3> 3gt
-map <C-4> 4gt
-map <C-5> 5gt
-map <C-6> 6gt
-map <C-7> 7gt
-map <C-8> 8gt
-map <C-9> 9gt
-map <C-0> :tablast<CR>
-
 
 if $TERM =~ '^screen-256color'
     map <Esc>OH <Home>
@@ -171,30 +197,6 @@ let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 
-" folding
-nnoremap <Space> za
-vnoremap <Space> za
-
-"Commands
-command! W w !sudo tee %
-command! -range=% CheckWhitespace <line1>,<line2>s/\s\+$//gc
-
-" delete without yanking
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-nnoremap <leader>D "_D
-vnoremap <leader>D "_D
-
-" replace currently selected text with default register
-" without yanking it
-vnoremap <leader>p "_dP
-
-nnoremap <leader>= :Align<CR>
-vnoremap <leader>= :Align<CR>
-
-" Copy paste from clipboard (xclip) must be enabled
-vmap "+y :!xclip -f -sel clip<CR>
-map "+p :!xclip -o -sel clip<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
