@@ -315,3 +315,11 @@ function! QuickfixFilenames()
   endfor
   return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 endfunction
+
+""
+" Undo
+""
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=10000
+set undoreload=10000
