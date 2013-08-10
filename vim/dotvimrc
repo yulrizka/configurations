@@ -51,6 +51,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+inoremap <s-tab> <c-n>
+
 " Function to toogle vertical line
 nnoremap <silent> <leader>vl :set cursorcolumn!<CR>
 

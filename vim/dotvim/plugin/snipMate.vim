@@ -181,7 +181,13 @@ fun! TriggerSnippet()
 		call feedkeys(SuperTabKey)
 		return ''
 	endif
-	return "\<tab>"
+
+	let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
 endf
 
 fun! BackwardsSnippet()
