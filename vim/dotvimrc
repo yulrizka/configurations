@@ -204,14 +204,15 @@ map <F4> :TlistToggle<cr>
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
+map <leader>l :call RunLastTest()<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
 
 function! RunTestFile(...)
     if a:0
-        let command_suffix = a:1
+        let t:command_suffix = a:1
     else
-        let command_suffix = ""
+        let t:command_suffix = ""
     endif
 
     " Run the tests for the previously-marked file.
@@ -221,7 +222,13 @@ function! RunTestFile(...)
     elseif !exists("t:grb_test_file")
         return
     end
-    call RunTests(t:grb_test_file . command_suffix)
+
+    let last_text_command = t:grb_test_file . t:command_suffix
+    call RunTests(last_text_command)
+endfunction
+
+function! RunLastTest()
+    call RunTests(t:grb_test_file . t:command_suffix)
 endfunction
 
 function! RunNearestTest()
