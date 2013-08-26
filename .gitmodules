@@ -1,9 +1,6 @@
 [submodule "vim/dotvim/bundle/nerdtree"]
 	path = vim/dotvim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/dotvim/snippets"]
-	path = vim/dotvim/snippets
-	url = https://github.com/scrooloose/snipmate-snippets.git
 [submodule "vim/dotvim/bundle/vim-surround"]
 	path = vim/dotvim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
