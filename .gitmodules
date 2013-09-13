@@ -40,3 +40,6 @@
 [submodule "vim/dotvim/bundle/vim-ruby"]
 	path = vim/dotvim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/dotvim/bundle/vim-less"]
+	path = vim/dotvim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
