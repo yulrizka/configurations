@@ -96,7 +96,7 @@ command! Q q
 
 "save
 map <leader>s :w<CR>
-imap <leader>s :w<CR>
+imap <leader>s <esc>:w<CR>
 
 " delete without yanking
 nnoremap <leader>d "_d
