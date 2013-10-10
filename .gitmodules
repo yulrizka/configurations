@@ -13,12 +13,6 @@
 [submodule "zsh/dotoh-my-zsh"]
 	path = zsh/dotoh-my-zsh
 	url = https://github.com/yulrizka/oh-my-zsh.git
-[submodule "/home/ahmy/.vim/bundle/tslime.vim"]
-	path = /home/ahmy/.vim/bundle/tslime.vim
-	url = https://github.com/vim-scripts/tslime.vim.git
-[submodule "vim/dotvim/bundle/linediff.vim"]
-	path = vim/dotvim/bundle/linediff.vim
-	url = git://github.com/AndrewRadev/linediff.vim.git
 [submodule "vim/dotvim/bundle/vim-cofee-script"]
 	path = vim/dotvim/bundle/vim-cofee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
@@ -34,9 +28,6 @@
 [submodule "vim/dotvim/bundle/vim-unimpaired"]
 	path = vim/dotvim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "vim/dotvim/bundle/jedi-vim"]
-	path = vim/dotvim/bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "vim/dotvim/bundle/vim-ruby"]
 	path = vim/dotvim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
