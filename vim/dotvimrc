@@ -336,3 +336,5 @@ set undodir=~/.vim/undodir
 set undofile
 set undolevels=10000
 set undoreload=10000
+
+runtime macros/matchit.vim
