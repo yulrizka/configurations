@@ -90,7 +90,7 @@ map <C-9> 9gt
 map <C-0> :tablast<CR>
 
 "Commands
-command! W w !sudo tee %
+command! W w !sudo tee % > /dev/null
 command! -range=% CheckWhitespace <line1>,<line2>s/\s\+$//gc
 command! Q q
 
