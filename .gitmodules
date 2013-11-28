@@ -21,7 +21,7 @@
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/dotvim/bundle/command-t"]
 	path = vim/dotvim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
+	url = https://github.com/wincent/Command-T.git
 [submodule "vim/dotvim/bundle/ag.vim"]
 	path = vim/dotvim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim
