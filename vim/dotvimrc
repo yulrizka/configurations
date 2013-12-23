@@ -90,7 +90,7 @@ map <C-9> 9gt
 map <C-0> :tablast<CR>
 
 "Commands
-command! W w !sudo tee %
+command! W w !sudo tee % > /dev/null
 command! -range=% CheckWhitespace <line1>,<line2>s/\s\+$//gc
 command! Q q
 
@@ -272,6 +272,7 @@ endfunction
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+set wildignore+=node_modules
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
