@@ -1,9 +1,9 @@
 #!/bin/bash
 git submodule init
 git submodule update
-ln -s ~/.configurations/vim/dotvim ~/.vim
-ln -s ~/.configurations/vim/dotvimrc ~/.vimrc
-ln -s ~/.configurations/tmux/dottmux.conf ~/.tmux.conf
-ln -s ~/.configurations/zsh/dotoh-my-zsh ~/.oh-my-zsh
-ln -s ~/.configurations/python/pystartup ~/.pystartup
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+[ -h ~/.vim ] || ln -s ~/.configurations/vim/dotvim ~/.vim
+[ -h ~/.vimrc ]     || ln -s ~/.configurations/vim/dotvimrc ~/.vimrc
+[ -h ~/.tmux.conf ] || ln -s ~/.configurations/tmux/dottmux.conf ~/.tmux.conf
+[ -h ~/.oh-my-zsh ] || ln -s ~/.configurations/zsh/dotoh-my-zsh ~/.oh-my-zsh
+[ -h ~/.pystartup ] || ln -s ~/.configurations/python/pystartup ~/.pystartup
+[ -f ~/.zshrc ]     || cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
