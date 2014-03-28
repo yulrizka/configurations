@@ -7,7 +7,7 @@ git submodule update
 [ -h ~/.oh-my-zsh ] || ln -s ~/.configurations/zsh/dotoh-my-zsh ~/.oh-my-zsh
 [ -h ~/.pystartup ] || ln -s ~/.configurations/python/pystartup ~/.pystartup
 [ -h ~/.pryrc ] || ln -s ~/.configurations/dotfiles/pryrc ~/.pryrc
-[ -h ~/.Xmodmap ] || ln -s ~/.configurations/dotfiles/Xmodmap ~/.pryrc
+[ -h ~/.Xmodmap ] || ln -s ~/.configurations/dotfiles/Xmodmap ~/Xmodmap
 
 if [ ! -h ~/.zshrc ]; then
   cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
