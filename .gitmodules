@@ -43,3 +43,6 @@
 [submodule "vim/dotvim/bundle/editorconfig-vim"]
 	path = vim/dotvim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim/dotvim/bundle/syntastic"]
+	path = vim/dotvim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
