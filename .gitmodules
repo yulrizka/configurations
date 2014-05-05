@@ -46,3 +46,6 @@
 [submodule "vim/dotvim/bundle/syntastic"]
 	path = vim/dotvim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/dotvim/bundle/vim-golang"]
+	path = vim/dotvim/bundle/vim-golang
+	url = git@github.com:jnwhiteh/vim-golang.git
