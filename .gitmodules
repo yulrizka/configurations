@@ -48,4 +48,4 @@
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/dotvim/bundle/vim-golang"]
 	path = vim/dotvim/bundle/vim-golang
-	url = git@github.com:jnwhiteh/vim-golang.git
+	url = https://github.com/jnwhiteh/vim-golang.git
