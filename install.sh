@@ -7,6 +7,7 @@ git submodule update
 [ -h ~/.oh-my-zsh ] || ln -s ~/.configurations/zsh/dotoh-my-zsh ~/.oh-my-zsh
 [ -h ~/.pystartup ] || ln -s ~/.configurations/python/pystartup ~/.pystartup
 [ -h ~/.pryrc ] || ln -s ~/.configurations/dotfiles/pryrc ~/.pryrc
+[ -h ~/.i3 ] || ln -s ~/.configurations/.i3 ~/.i3
 #[ -h ~/.Xmodmap ] || ln -s ~/.configurations/dotfiles/Xmodmap ~/Xmodmap
 
 if [ ! -h ~/.zshrc ]; then
