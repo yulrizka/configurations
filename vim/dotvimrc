@@ -38,9 +38,26 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-fugitive'
+Plugin 'wincent/Command-T'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'groenewege/vim-less'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'fatih/vim-go'
+
+" Golang Plugins
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
-
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
