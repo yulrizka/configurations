@@ -1,57 +1,6 @@
-[submodule "vim/dotvim/bundle/nerdtree"]
-	path = vim/dotvim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/dotvim/bundle/vim-surround"]
-	path = vim/dotvim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/dotvim/bundle/vim-rails"]
-	path = vim/dotvim/bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
-[submodule "vim/dotvim/bundle/vim-endwise"]
-	path = vim/dotvim/bundle/vim-endwise
-	url = https://github.com/tpope/vim-endwise.git
 [submodule "zsh/dotoh-my-zsh"]
 	path = zsh/dotoh-my-zsh
 	url = https://github.com/yulrizka/oh-my-zsh.git
-[submodule "vim/dotvim/bundle/vim-cofee-script"]
-	path = vim/dotvim/bundle/vim-cofee-script
-	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/dotvim/bundle/vim-fugitive"]
-	path = vim/dotvim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/dotvim/bundle/command-t"]
-	path = vim/dotvim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
-[submodule "vim/dotvim/bundle/ag.vim"]
-	path = vim/dotvim/bundle/ag.vim
-	url = https://github.com/rking/ag.vim
-[submodule "vim/dotvim/bundle/vim-unimpaired"]
-	path = vim/dotvim/bundle/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "vim/dotvim/bundle/vim-ruby"]
-	path = vim/dotvim/bundle/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/dotvim/bundle/vim-less"]
-	path = vim/dotvim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
-[submodule "vim/dotvim/bundle/vim-text-obj-user"]
-	path = vim/dotvim/bundle/vim-text-obj-user
-	url = https://github.com/kana/vim-textobj-user.git
-[submodule "vim/dotvim/bundle/vim-textobj-rubyblock"]
-	path = vim/dotvim/bundle/vim-textobj-rubyblock
-	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule "vim/dotvim/bundle/editorconfig-vim"]
-	path = vim/dotvim/bundle/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/dotvim/bundle/syntastic"]
-	path = vim/dotvim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/dotvim/bundle/vim-golang"]
-	path = vim/dotvim/bundle/vim-golang
-	url = https://github.com/jnwhiteh/vim-golang.git
-[submodule "vim/dotvim/bundle/vim-go"]
-	path = vim/dotvim/bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
 [submodule "vim/dotvim/bundle/Vundle.vim"]
 	path = vim/dotvim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
