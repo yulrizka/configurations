@@ -269,6 +269,8 @@ map <leader>l :call RunLastTest()<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
 
+let t:minitest = 0
+
 function! RunTestFile(...)
     if a:0
         let t:command_suffix = a:1
@@ -294,7 +296,11 @@ endfunction
 
 function! RunNearestTest()
     let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number . " -b")
+    if t:minitest
+      call RunTestFile(" -l" . spec_line_number)
+    else
+      call RunTestFile(":" . spec_line_number . " -b")
+    end
 endfunction
 
 function! SetTestFile()
@@ -316,7 +322,10 @@ function! RunTests(filename)
     else
         if filereadable("script/test")
             exec ":!script/test " . a:filename
+        elseif t:minitest
+            exec ":!bundle exec ruby " . a:filename
         elseif filereadable("Gemfile") && filereadable("bin/rspec")
+            echo "e"
             "exec ":!bundle exec rspec --color " . a:filename
             exec ":!bin/rspec --color " . a:filename
         else
