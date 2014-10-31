@@ -58,7 +58,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'fatih/vim-go'
 
 " Golang Plugins
+
+" YouCompleteMe
+" sudo apt-get install build-essential cmake python-dev
+" cd ~/.vim/bundle/YouCompleteMe
+" ./install.sh
 Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'yulrizka/vim-snippets'
