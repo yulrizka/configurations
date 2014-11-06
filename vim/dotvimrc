@@ -55,17 +55,17 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'fatih/vim-go'
 
 " Golang Plugins
+"Plugin 'fatih/vim-go'
 
 " YouCompleteMe
 " sudo apt-get install build-essential cmake python-dev
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.sh
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'yulrizka/vim-snippets'
 
