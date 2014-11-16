@@ -46,7 +46,6 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-fugitive'
-Plugin 'wincent/Command-T'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
@@ -56,14 +55,15 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
 
+"cd ~/.vim/bundle/Command-T/ruby/command-t/;/usr/bin/ruby extconf.rb;make
+Plugin 'wincent/Command-T'
+
 " Golang Plugins
-"Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 
 " YouCompleteMe
-" sudo apt-get install build-essential cmake python-dev
-" cd ~/.vim/bundle/YouCompleteMe
-" ./install.sh
-"Plugin 'Valloric/YouCompleteMe'
+" sudo apt-get install build-essential cmake python-dev;cd ~/.vim/bundle/YouCompleteMe;./install.sh
+Plugin 'Valloric/YouCompleteMe'
 
 "Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
