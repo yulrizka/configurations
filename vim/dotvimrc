@@ -61,6 +61,9 @@ Plugin 'wincent/Command-T'
 " Golang Plugins
 Plugin 'fatih/vim-go'
 
+" :GoInstallBinaries
+Plugin 'fatih/vim-go'
+
 " YouCompleteMe
 " sudo apt-get install build-essential cmake python-dev;cd ~/.vim/bundle/YouCompleteMe;./install.sh
 Plugin 'Valloric/YouCompleteMe'
