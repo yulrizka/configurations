@@ -59,8 +59,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'wincent/Command-T'
 
 " Golang Plugins
-Plugin 'fatih/vim-go'
-
 " :GoInstallBinaries
 Plugin 'fatih/vim-go'
 
