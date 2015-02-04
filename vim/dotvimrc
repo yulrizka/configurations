@@ -59,6 +59,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'wincent/Command-T'
 
 " Golang Plugins
+" :GoInstallBinaries
 Plugin 'fatih/vim-go'
 
 " YouCompleteMe
