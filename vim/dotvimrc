@@ -54,6 +54,8 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'jgdavey/tslime.vim'
+
 
 "cd ~/.vim/bundle/Command-T/ruby/command-t/;/usr/bin/ruby extconf.rb;make
 Plugin 'wincent/Command-T'
@@ -152,7 +154,7 @@ imap <c-s>s <esc>:w<CR>
 
 " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it.
-command -nargs=0 -bar Update if &modified
+command! -nargs=0 -bar Update if &modified
                            \|    if empty(bufname('%'))
                            \|        browse confirm write
                            \|    else
@@ -419,3 +421,7 @@ runtime macros/matchit.vim
 ""
 let g:go_fmt_command = "goimports"
 
+
+vnoremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
+noremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
+noremap <leader>rs <Plug>SetTmuxVars
