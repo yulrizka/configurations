@@ -181,8 +181,6 @@ vnoremap <leader>= :Align<CR>
 " Copy paste from clipboard (xclip) must be enabled
 vmap "+y :!xclip -f -sel clip<CR>
 map "+p :!xclip -o -sel clip<CR>
-"Plugins and phatogen
-call pathogen#infect()
 
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
@@ -263,9 +261,9 @@ autocmd User Fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " ctags
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 50
-map <F4> :TlistToggle<cr>
+let g:tagbar_foldlevel = 0
+let g:tagbar_autoshowtag = 2
+map <F4> :Tagbar<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -347,9 +345,9 @@ endfunction
 " CommandT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-map <leader>b :CommandTBuffer<cr>
+map <leader>f :CommandTFlush<cr>\|:CommandT .<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT<cr>
+nnoremap <silent> <leader>b :CommandTMRU<CR>
 set wildignore+=node_modules,Godeps/_workspace
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -420,8 +418,19 @@ runtime macros/matchit.vim
 
 ""
 let g:go_fmt_command = "goimports"
+let g:go_metalinter_enabled = ['go vet', 'golint', 'gotype']
 
 
 vnoremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
 noremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
 noremap <leader>rs <Plug>SetTmuxVars
+
+let g:syntastic_mode_map = {
+      \ "mode": "active",
+      \ "active_filetypes": [],
+      \ "passive_filetypes": ["go"] }
+
+
+let g:go_fmt_autosave = 0
+
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>

@@ -38,5 +38,12 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap gd <Plug>(go-def)
-au FileType go set foldmethod=syntax
-au FileType go set foldnestmax=1
+
+" oracle
+au FileType go nmap <Leader>cr <Plug>(go-callers)
+au FileType go nmap <Leader>cl <Plug>(go-calles)
+au FileType go nmap <Leader>od <Plug>(go-describe)
+
+
+
+autocmd BufWritePre *.go call go#fmt#Format(-1) | call go#lint#Gometa('')
