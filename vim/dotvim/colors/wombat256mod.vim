@@ -70,6 +70,7 @@ hi DiffChange					ctermbg=237										guibg=#382a37
 "hi TabLine
 "hi TabLineFill
 "hi TabLineSel
+hi TabLineSel ctermfg=111
 "hi Tooltip
 "hi User1
 "hi User9
