@@ -63,7 +63,7 @@ hi DiffChange					ctermbg=237										guibg=#382a37
 "hi Question
 "hi Scrollbar
 "hi SignColumn
-"hi SpellBad
+hi SpellBad		ctermfg=252		ctermbg=196		cterm=bold		guifg=#ff2026	guibg=#3a3a3a	gui=bold
 "hi SpellCap
 "hi SpellLocal
 "hi SpellRare

@@ -72,11 +72,13 @@ Plugin 'wincent/Command-T'
 Plugin 'SirVer/ultisnips'
 Plugin 'yulrizka/vim-snippets'
 
+call vundle#end()
+
+" Ultisnips
 let g:UltiSnipsExpandTrigger="<c-l>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-call vundle#end()
 filetype plugin indent on
 
 " restor cursor position
@@ -127,30 +129,24 @@ nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>
 nnoremap <silent> <C-f>p     :FufFile<CR>
 
 "tab commands
-map <C-S-]> gt
-map <C-S-[> gT
-map <C-1> 1gt
-map <C-2> 2gt
-map <C-3> 3gt
-map <C-4> 4gt
-map <C-5> 5gt
-map <C-6> 6gt
-map <C-7> 7gt
-map <C-8> 8gt
-map <C-9> 9gt
-map <C-0> :tablast<CR>
+map <Leader>] gt
+map <Leader>[ gT
+map <Leader>1 1gt
+map <Leader>2 2gt
+map <Leader>3 3gt
+map <Leader>4 4gt
+map <Leader>5 5gt
+map <Leader>6 6gt
+map <Leader>7 7gt
+map <Leader>8 8gt
+map <Leader>9 9gt
+map <Leader>0 :tablast<CR>
 
 "Commands
 command! W w !sudo tee % > /dev/null
 command! -range=% CheckWhitespace <line1>,<line2>s/\s\+$//gc
 command! Q q
 
-"save
-map <leader>s :w<CR>
-imap <leader>s <esc>:w<CR>
-
-map <c-s> :w<CR>
-imap <c-s>s <esc>:w<CR>
 
 " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it.
@@ -184,12 +180,17 @@ map "+p :!xclip -o -sel clip<CR>
 
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
+
 " Clear the search buffer when hitting return
 function! MapCR()
-  nnoremap <cr> :nohlsearch<cr>
+  nnoremap <CR> :nohlsearch<cr>
 endfunction
 call MapCR()
+
 nnoremap <leader><leader> <c-^>
+
+" search for selected text
+vnoremap // y/<C-R>"<CR>
 
 ""
 " FUNCTIONS
@@ -418,13 +419,14 @@ runtime macros/matchit.vim
 
 ""
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_enabled = ['go vet', 'golint', 'gotype']
+let g:go_metalinter_enabled = ['vet', 'golint', 'gotype']
 
 
 vnoremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
 noremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
 noremap <leader>rs <Plug>SetTmuxVars
 
+let g:syntastic_go_checkers = ['golint', 'govet', 'gotype']
 let g:syntastic_mode_map = {
       \ "mode": "active",
       \ "active_filetypes": [],
@@ -432,5 +434,20 @@ let g:syntastic_mode_map = {
 
 
 let g:go_fmt_autosave = 0
+"let g:go_metalinter_autosave = 1
 
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+
+"save
+map <leader>s :w<CR>
+imap <leader>s <esc>:w<CR>
+unmap <C-s>
+map <C-s> :w<CR>
+imap <C-s>s <esc>:w<CR>
+
+map <leader>q :q<CR>
+
+" disable entring ex mode
+:nnoremap Q <Nop>
+
+nnoremap <CR> :nohlsearch<cr>

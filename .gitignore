@@ -13,5 +13,3 @@ vim/dotvim/undodir
 vim/dotvim/bundle/*
 !vim/dotvim/bundle/Vundle.vim
 !vim/dotvim/bundle/web-indent
-!vim/dotvim/bundle/align
-!vim/dotvim/bundle/puppet
