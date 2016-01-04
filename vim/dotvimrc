@@ -421,6 +421,8 @@ runtime macros/matchit.vim
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_enabled = ['vet', 'golint', 'gotype']
 
+"" Command-T ignore bower_components
+let g:CommandTWildIgnore=&wildignore . ",**/bower_components/*"
 
 vnoremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
 noremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
