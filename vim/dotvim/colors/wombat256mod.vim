@@ -67,9 +67,8 @@ hi SpellBad		ctermfg=252		ctermbg=196		cterm=bold		guifg=#ff2026	guibg=#3a3a3a	g
 "hi SpellCap
 "hi SpellLocal
 "hi SpellRare
-"hi TabLine
+hi TabLine ctermfg=249
 "hi TabLineFill
-"hi TabLineSel
 hi TabLineSel ctermfg=111
 "hi Tooltip
 "hi User1

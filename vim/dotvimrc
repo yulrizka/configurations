@@ -8,6 +8,7 @@ set encoding=utf-8
 colorscheme wombat256mod
 set t_Co=256
 set listchars=tab:·\ ,eol:¬
+"set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set statusline=%<\ %n:%f\ %m%r%y%=%-40.([%{&expandtab?'space':'tab'}]\ line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set laststatus=2
 set showmatch
@@ -452,4 +453,6 @@ map <leader>q :q<CR>
 " disable entring ex mode
 :nnoremap Q <Nop>
 
+" enable git gutter
+let g:gitgutter_enabled = 1
 nnoremap <CR> :nohlsearch<cr>
