@@ -22,6 +22,7 @@ set cmdheight=2
 set winwidth=79
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+set wildmenu
 
 " store temporary file in central directory
 set backup
@@ -68,7 +69,7 @@ vmap <F12> <ESC>:set hls!<CR>gv
 nnoremap <Space> za
 vnoremap <Space> za
 
-" Buffer, used ?
+" Buffer completion
 nnoremap <silent> <C-n>      :FufBuffer<CR>
 nnoremap <silent> <C-p>      :FufFileWithCurrentBufferDir<CR>
 nnoremap <silent> <C-f><C-p> :FufFileWithFullCwd<CR>

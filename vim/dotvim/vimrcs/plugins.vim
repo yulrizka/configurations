@@ -15,8 +15,13 @@ Plugin 'vim-scripts/Align'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-commentary'
 Plugin 'kana/vim-textobj-user'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-scripts/YankRing.vim'
+
 
 " --- UTILITY ---
 Plugin 'scrooloose/nerdtree'
@@ -27,6 +32,7 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'yulrizka/vim-snippets'
 Plugin 'vim-airline/vim-airline'
+Plugin 'airblade/vim-gitgutter'
 "Plugin 'majutsushi/tagbar'
 
 "cd ~/.vim/bundle/Command-T/ruby/command-t/;/usr/bin/ruby extconf.rb;make
@@ -102,6 +108,15 @@ nnoremap <CR> :nohlsearch<cr>
 
 " vim-airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " NERDTree
 let g:NERDTreeWinPos = "right"
+
+" Multi Cursors
+let g:multi_cursor_start_key='<leader>m'
+
+" YankRing 
+" disable on start
+autocmd VimEnter * silent YRToggle(0)
+nnoremap <leader>y :YRToggle<CR>

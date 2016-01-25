@@ -204,4 +204,3 @@ command! -nargs=0 -bar Update if &modified
           \|endif
 noremap <silent> <C-S> :<C-u>Update<CR>
 inoremap <silent> <C-S> <esc>:<C-u>Update<CR>
-
