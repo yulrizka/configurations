@@ -41,6 +41,19 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+
+# workspace setup
+workspace 1 output HDMI2
+workspace 2 output HDMI2
+workspace 3 output HDMI2
+workspace 4 output HDMI2
+workspace 5 output HDMI2
+workspace 6 output VGA1
+workspace 7 output VGA1
+workspace 8 output VGA1
+workspace 9 output VGA1
+workspace 10 output VGA1
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -187,6 +200,8 @@ bindsym $mod+shift+s [title="^Sup ::"] scratchpad show
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+exec --no-startup-id dropbox start
 
 # volume
 #bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master Playback 4%+
