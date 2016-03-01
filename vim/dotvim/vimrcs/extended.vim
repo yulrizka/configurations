@@ -17,7 +17,7 @@ nnoremap <silent> <leader>l :call ListToggle()<CR>
 
 " Highlight trailing spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
-let g:highlightWhitespace = 1
+let g:highlightWhitespace = 2
 function! g:ToggleHighlightWhitespace()
   if g:highlightWhitespace == 2
     let g:highlightWhitespace = 0
