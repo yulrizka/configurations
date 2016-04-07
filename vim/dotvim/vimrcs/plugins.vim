@@ -88,6 +88,11 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'gotype']
 
 "" Command-T ignore bower_components
 let g:CommandTWildIgnore=&wildignore . ",**/bower_components/*,*.,*.class"
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>f :CommandTFlush<cr>\|:CommandT .<cr>
+map <leader>F :CommandT<cr>
+nnoremap <silent> <leader>b :CommandTMRU<CR>
+set wildignore+=node_modules,Godeps/_workspace
 
 vnoremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
 noremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
