@@ -105,7 +105,7 @@ let g:syntastic_mode_map = {
       \ "passive_filetypes": ["go"] }
 
 let g:go_fmt_autosave = 0
-"let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 1
 
 " enable git gutter
 let g:gitgutter_enabled = 1
