@@ -83,8 +83,11 @@ let g:tagbar_autoshowtag = 2
 map <F4> :Tagbar<cr>
 
 " vim go
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "casimports"
+let g:go_fmt_auto_save = 1
 let g:go_metalinter_enabled = ['vet', 'golint', 'gotype']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'gotype']
 
 "" Command-T ignore bower_components
 let g:CommandTWildIgnore=&wildignore . ",**/bower_components/*,*.,*.class"
@@ -103,9 +106,6 @@ let g:syntastic_mode_map = {
       \ "mode": "active",
       \ "active_filetypes": [],
       \ "passive_filetypes": ["go"] }
-
-let g:go_fmt_autosave = 0
-let g:go_metalinter_autosave = 1
 
 " enable git gutter
 let g:gitgutter_enabled = 1
