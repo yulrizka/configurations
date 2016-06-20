@@ -83,7 +83,7 @@ let g:tagbar_autoshowtag = 2
 map <F4> :Tagbar<cr>
 
 " vim go
-let g:go_fmt_command = "casimports"
+let g:go_fmt_command = "goimports"
 let g:go_fmt_auto_save = 1
 let g:go_metalinter_enabled = ['vet', 'golint', 'gotype']
 let g:go_metalinter_autosave = 1
