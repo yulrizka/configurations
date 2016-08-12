@@ -33,6 +33,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'yulrizka/vim-snippets'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'majutsushi/tagbar'
 
 "cd ~/.vim/bundle/Command-T/ruby/command-t/;/usr/bin/ruby extconf.rb;make
