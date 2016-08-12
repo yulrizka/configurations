@@ -90,7 +90,7 @@ let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'gotype']
 
 "" Command-T ignore bower_components
-let g:CommandTWildIgnore=&wildignore . ",**/bower_components/*,*.,*.class"
+let g:CommandTWildIgnore=&wildignore . ",**/bower_components/*,*.,*.class,*.a"
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT .<cr>
 map <leader>F :CommandT<cr>
