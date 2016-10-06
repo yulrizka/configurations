@@ -44,4 +44,9 @@ au FileType go nmap <Leader>cr <Plug>(go-callers)
 au FileType go nmap <Leader>cl <Plug>(go-calles)
 au FileType go nmap <Leader>od <Plug>(go-describe)
 
+" decls
+au FileType go nmap <Leader>dc :GoDecls<CR>
+au FileType go nmap <Leader>df :GoDeclsDir<CR>
+au FileType go nmap <leader>. :GoAlternate<CR>
+
 "autocmd BufWritePre *.go call go#fmt#Format(-1) | call go#lint#Gometa('')

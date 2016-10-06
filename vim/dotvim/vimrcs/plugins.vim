@@ -101,6 +101,10 @@ set wildignore+=node_modules,Godeps/_workspace
 vnoremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
 noremap <silent> <leader>rr "ry :call Send_to_Tmux(@r)<CR>
 noremap <leader>rs <Plug>SetTmuxVars
+map `e :call Send_keys_to_Tmux('^m')<cr>
+map `p :call Send_keys_to_Tmux('^p')<cr>
+map `n :call Send_keys_to_Tmux('^n')<cr>
+"map ,e :call Send_keys_to_Tmux('^p')\| call Send_keys_to_Tmux('^m')<cr>
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'gotype']
 let g:syntastic_mode_map = {

@@ -52,3 +52,6 @@ func
 tcp
 desc
 frontend
+gameID
+github
+yulrizka
