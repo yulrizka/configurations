@@ -51,7 +51,7 @@ Plugin 'fatih/vim-go'
 
 " YouCompleteMe
 " sudo apt-get install build-essential cmake python-dev;cd ~/.vim/bundle/YouCompleteMe;./install.sh
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 " --- WEB ---
 Plugin 'lukaszb/vim-web-indent'
