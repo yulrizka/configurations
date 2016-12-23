@@ -1,6 +1,7 @@
 #!/bin/bash
 git submodule init
 git submodule update
+[ -f ~/.emacs.d ] || ln -s ~/.configurations/emacs ~/.emacs.d
 [ -f ~/.vim ] || ln -s ~/.configurations/vim/dotvim ~/.vim
 [ -f ~/.vimrc ]     || ln -s ~/.configurations/vim/dotvimrc ~/.vimrc
 [ -h ~/.tmux.conf ] || ln -s ~/.configurations/tmux/dottmux.conf ~/.tmux.conf
