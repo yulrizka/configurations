@@ -16,6 +16,13 @@
 (show-paren-mode 1)
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 
+;; temp directory
+(setq backup-directory-alist
+          `((".*" . ,"~/.emacs_temp/")))
+    (setq auto-save-file-name-transforms
+          `((".*" ,"~/.emacs_temp/" t)))
+
+;;; Package
 (require 'package)
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)

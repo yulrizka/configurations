@@ -3,7 +3,7 @@
 # key: fum
 # contributor: @ayulrizka
 # --
-func (self ${1:type}) ${2:funcName}(${3}) ${4:error} {
-	${5}
+func (${1:type}) ${2:funcName}(${3:parameters}) ${4:error} {
+	${5:body}
 }
-${0}
+$0
