@@ -1,17 +1,23 @@
+(require 'helm-files)
+
 (defun icas-go ()
   (interactive)
-  (ido-find-file-in-dir "~/dev/ecg-icas/icas/src/go/src/cas"))
+  (let ((default-directory "~/dev/ecg-icas/icas/src/go/"))
+    (helm-find-files nil)))
 
 (defun icas-java ()
   (interactive)
-  (ido-find-file-in-dir "~/dev/ecg-icas/icas/src/java"))
+  (let ((default-directory "~/dev/ecg-icas/icas/src/java/"))
+    (helm-find-files nil)))
 
 (defun icas-service ()
   (interactive)
-  (ido-find-file-in-dir "~/dev/ecg-icas/icas/src/go/src/cas/svc"))
+  (let ((default-directory "~/dev/ecg-icas/icas/src/go/src/cas/svc/"))
+    (helm-find-files nil)))
 
 (defun icas-lib ()
   (interactive)
-  (ido-find-file-in-dir "~/dev/ecg-icas/icas/src/go/src/cas/lib"))
+  (let ((default-directory "~/dev/ecg-icas/icas/src/go/src/cas/lib/"))
+    (helm-find-files nil)))
 
 (provide `icas)

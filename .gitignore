@@ -18,3 +18,6 @@ emacs/ac-comphist.dat
 emacs/ido.last
 emacs/smex-items
 emacs/elpa/archives/melpa/archive-contents
+emacs/savehist
+emacs/projectile-bookmarks.eld
+emacs/recentf

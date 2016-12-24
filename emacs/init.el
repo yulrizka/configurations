@@ -16,6 +16,17 @@
 (show-paren-mode 1)
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 
+;; history
+(setq savehist-file "~/.emacs.d/savehist")
+(savehist-mode 1)
+(setq history-length t)
+(setq history-delete-duplicates t)
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables
+      '(kill-ring
+        search-ring
+        regexp-search-ring))
+
 ;; temp directory
 (setq backup-directory-alist
           `((".*" . ,"~/.emacs_temp/")))
@@ -53,7 +64,7 @@
  '(gofmt-command "casimports")
  '(package-selected-packages
    (quote
-    (helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
+    (helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
  '(powerline-default-separator (quote rounded))
  '(whitespace-style (quote (face trailing))))
 (custom-set-faces
@@ -97,6 +108,20 @@
           helm-quick-update t
 	  helm-M-x-requires-pattern nil
           helm-ff-skip-boring-files t)
+
+    (use-package helm-projectile
+                 :ensure    helm-projectile
+                 :bind      ("C-c h" . helm-projectile))
+
+    ;; emacs
+    (setq helm-locate-command
+	  "glocate %s %s"
+	  helm-locate-create-db-command
+	  "gupdatedb --output='%s' --localpaths='%s'")
+
+    (setq helm-locate-project-list
+	  (list "/Users/xcy/.emacs.d/"))
+
     (helm-mode))
   :bind (("C-c h" . helm-mini)
          ("C-h a" . helm-apropos)
@@ -120,12 +145,6 @@
 
 ;; git-gutter
 (global-git-gutter-mode +1)
-
-;; Smex
-;;(global-set-key (kbd "M-x") 'smex)
-;;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; This is your old M-x.
-;;(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; GO
 (require 'go-autocomplete)
