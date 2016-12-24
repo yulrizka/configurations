@@ -48,7 +48,8 @@
  '(ido-mode (quote both) nil (ido))
  '(package-selected-packages
    (quote
-    (use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
+    (spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
+ '(powerline-default-separator (quote rounded))
  '(whitespace-style (quote (face trailing))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -65,6 +66,11 @@
   :config
   (progn
     (flycheck-gometalinter-setup)))
+
+(use-package spaceline-config
+  :ensure spaceline
+  :config
+(spaceline-emacs-theme))
 
 ;; git-gutter
 (global-git-gutter-mode +1)
