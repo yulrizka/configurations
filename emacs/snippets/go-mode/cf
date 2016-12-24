@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: clog.Fatal
+# key: cf
+# contributor: @ayulrizka
+# --
+clog.Fatal(${1:message})

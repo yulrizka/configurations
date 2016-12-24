@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: log printf
+# key: lf
+# contributor: @ayulrizka
+# --
+log.Printf("%${1:s}", ${2:var})

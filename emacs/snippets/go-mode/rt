@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: return
+# key: rt
+# contributor: @ayulrizka
+# --
+return ${0}

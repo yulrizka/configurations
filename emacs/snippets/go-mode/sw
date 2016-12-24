@@ -1,0 +1,12 @@
+# _*_ mode: snippet _*_
+# name: switch
+# key: sw
+# contributor: @ayulrizka
+# --
+switch ${1:var} {
+case ${2:value1}:
+	${3}
+case ${4:value2}:
+	${5}
+default:
+	${0}

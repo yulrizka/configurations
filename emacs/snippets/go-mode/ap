@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: append
+# key: ap
+# contributor: @ayulrizka
+# --
+append(${1:slice}, ${0:value})

@@ -1,0 +1,7 @@
+# _*_ mode: snippet _*_
+# name: case
+# key: cs
+# contributor: @ayulrizka
+# --
+case ${1:value}:
+	${0}

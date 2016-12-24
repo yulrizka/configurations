@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: map
+# key: mp
+# contributor: @ayulrizka
+# --
+map[${1:string}]${0:int}

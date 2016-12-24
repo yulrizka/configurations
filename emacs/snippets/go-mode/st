@@ -1,0 +1,9 @@
+# _*_ mode: snippet _*_
+# name: struct
+# key: st
+# contributor: @ayulrizka
+# --
+struct ${1:name} {
+	${2:/* data */}
+}
+${0}

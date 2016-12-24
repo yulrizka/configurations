@@ -1,0 +1,13 @@
+# _*_ mode: snippet _*_
+# name: select
+# key: sl
+# contributor: @ayulrizka
+# --
+select {
+case ${1:v1} := <-${2:chan1}
+	${3}
+case ${4:v2} := <-${5:chan2}
+	${6}
+default:
+	${0}
+}

@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: fmt.Printf
+# key: ff
+# contributor: @ayulrizka
+# --
+fmt.Printf("${1:${VISUAL}} = %+v\n", $1) // for debugging

@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: new
+# key: nw
+# contributor: @ayulrizka
+# --
+new(${0:type})

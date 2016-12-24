@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: shorthand variable declaration
+# key: v
+# contributor: @ayulrizka
+# --
+${1} := ${2}

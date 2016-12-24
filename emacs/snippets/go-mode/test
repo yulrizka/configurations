@@ -1,0 +1,9 @@
+# _*_ mode: snippet _*_
+# name: func Test
+# key: test
+# contributor: @ayulrizka
+# --
+func Test${1:name}(t *testing.T) {
+	${2}
+}
+${0}

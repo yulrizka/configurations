@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: channel
+# key: ch
+# contributor: @ayulrizka
+# --
+chan ${0:int}

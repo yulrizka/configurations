@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: panic
+# key: pn
+# contributor: @ayulrizka
+# --
+panic("${0:msg}")

@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: variable initialization
+# key: vr
+# contributor: @ayulrizka
+# --
+var ${1:t} ${0:string}

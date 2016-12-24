@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: log printf
+# key: lp
+# contributor: @ayulrizka
+# --
+log.Println("${1}")

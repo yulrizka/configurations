@@ -1,0 +1,9 @@
+# _*_ mode: snippet _*_
+# name: function on receiver
+# key: fum
+# contributor: @ayulrizka
+# --
+func (self ${1:type}) ${2:funcName}(${3}) ${4:error} {
+	${5}
+}
+${0}

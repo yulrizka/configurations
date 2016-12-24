@@ -1,0 +1,10 @@
+# _*_ mode: snippet _*_
+# name: defer recover
+# key: dfr
+# contributor: @ayulrizka
+# --
+defer func() {
+	if err := recover(); err != nil {
+		${0}
+	}
+}()

@@ -1,0 +1,9 @@
+# _*_ mode: snippet _*_
+# name: err != nil t.Error
+# key: terr
+# contributor: @ayulrizka
+# --
+if err != nil {
+	t.Error(err)
+}
+${0}

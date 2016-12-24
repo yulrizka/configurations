@@ -1,0 +1,9 @@
+# _*_ mode: snippet _*_
+# name: error snippet
+# key: ir
+# contributor: @ayulrizka
+# --
+if err != nil {
+	return err
+}
+${0}

@@ -1,0 +1,10 @@
+# _*_ mode: snippet _*_
+# name: test Test RegisterTesting
+# key: rtest
+# contributor: @ayulrizka
+# --
+func Test${1:name}(t *testing.T) {
+	RegisterTestingT(t)
+	${2}
+}
+${0}

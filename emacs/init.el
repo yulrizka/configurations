@@ -48,7 +48,7 @@
  '(ido-mode (quote both) nil (ido))
  '(package-selected-packages
    (quote
-    (spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
+    (yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
  '(powerline-default-separator (quote rounded))
  '(whitespace-style (quote (face trailing))))
 (custom-set-faces
@@ -70,7 +70,11 @@
 (use-package spaceline-config
   :ensure spaceline
   :config
-(spaceline-emacs-theme))
+  (spaceline-emacs-theme))
+
+(use-package yasnippet
+  :config
+  (yas-reload-all))
 
 ;; git-gutter
 (global-git-gutter-mode +1)
@@ -88,6 +92,7 @@
 (defun my-go-mode-hook ()
   "Initialize GO."
   (go-guru-hl-identifier-mode)
+  (yas-minor-mode)
 
   ; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)

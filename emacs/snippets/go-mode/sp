@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+	name: }
+# key: sp
+# contributor: @ayulrizka
+# --
+fmt.Sprintf("%${1:s}", ${2:var})

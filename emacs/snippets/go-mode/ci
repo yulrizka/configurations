@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: clog.Info
+# key: ci
+# contributor: @ayulrizka
+# --
+clog.Info(${1:message})

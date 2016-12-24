@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: defer
+# key: df
+# contributor: @ayulrizka
+# --
+defer ${0:func}()

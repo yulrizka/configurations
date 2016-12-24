@@ -1,0 +1,9 @@
+# _*_ mode: snippet _*_
+# name: for loop
+# key: fo
+# contributor: @ayulrizka
+# --
+for ${2:i} := 0; $2 < ${1:count}; $2${3:++} {
+	${4}
+}
+${0}

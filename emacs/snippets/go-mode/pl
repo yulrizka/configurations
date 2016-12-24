@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: print line
+# key: pl
+# contributor: @ayulrizka
+# --
+fmt.Println("${1}")

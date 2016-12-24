@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: clog.Errorf
+# key: cef
+# contributor: @ayulrizka
+# --
+clog.Errorf("${1:message}", ${2})

@@ -1,0 +1,9 @@
+# _*_ mode: snippet _*_
+# name: if err != nil clog.Error()
+# key: errl
+# contributor: @ayulrizka
+# --
+if err != nil {
+	clog.Error(err)
+}
+${0}

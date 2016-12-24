@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: print
+# key: pf
+# contributor: @ayulrizka
+# --
+fmt.Printf("%${1:s}\n", ${2:var})

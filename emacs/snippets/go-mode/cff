@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: clog.Fatalf
+# key: cff
+# contributor: @ayulrizka
+# --
+clog.Fatalf("${1:message}", ${2})

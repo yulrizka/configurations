@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: clog.Debug
+# key: cd
+# contributor: @ayulrizka
+# --
+clog.Debug(${1:message})

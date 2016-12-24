@@ -1,0 +1,8 @@
+# _*_ mode: snippet _*_
+# name: variables declaration
+# key: vars
+# contributor: @ayulrizka
+# --
+var (
+	${1} ${2} = ${3}
+)

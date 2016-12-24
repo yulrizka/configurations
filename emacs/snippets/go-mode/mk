@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: make
+# key: mk
+# contributor: @ayulrizka
+# --
+make(${1:[]string}, ${0:0})

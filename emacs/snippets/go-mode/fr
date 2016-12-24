@@ -1,0 +1,9 @@
+# _*_ mode: snippet _*_
+# name: for range loop
+# key: fr
+# contributor: @ayulrizka
+# --
+for ${1:k}, ${2:v} := range ${3} {
+	${4}
+}
+${0}

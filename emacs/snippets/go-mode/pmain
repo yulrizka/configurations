@@ -1,0 +1,11 @@
+# _*_ mode: snippet _*_
+# name: main()
+# key: pmain
+# contributor: @ayulrizka
+# --
+package main
+
+func main() {
+	${1}
+}
+${0}
