@@ -9,7 +9,9 @@
 
 ;; editor settings
 (setq mac-option-modifier 'meta) ; set alt-key to meta
+(setq mac-command-modifier 'super)
 (setq mac-escape-modifier nil) ; set esc-key to nil
+
 
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/themes/")
@@ -67,7 +69,7 @@
  '(gofmt-command "casimports")
  '(package-selected-packages
    (quote
-    (helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
+    (go-rename helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
  '(powerline-default-separator (quote rounded))
  '(whitespace-style (quote (face trailing))))
 (custom-set-faces
@@ -92,6 +94,7 @@
   (spaceline-emacs-theme))
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :config
   (yas-reload-all))
 
@@ -114,6 +117,7 @@
 
     (use-package helm-projectile
                  :ensure    helm-projectile
+                 :init      (helm-projectile-on)
                  :bind      ("C-c h" . helm-projectile))
 
     ;; emacs
@@ -150,6 +154,10 @@
 (global-git-gutter-mode +1)
 
 ;; GO
+(use-package go-rename
+  :ensure t
+  :commands go-rename)
+
 (require 'go-autocomplete)
 (require 'go-guru)
 (ac-config-default)
