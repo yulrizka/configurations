@@ -3,4 +3,4 @@
 # key: pl
 # contributor: @ayulrizka
 # --
-fmt.Println("${1}")
+fmt.Println("$1")

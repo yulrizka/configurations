@@ -20,4 +20,4 @@
  * Copyright (C) ${1:Author}, `strftime("%Y")`
  */
 
-${0}
+$0

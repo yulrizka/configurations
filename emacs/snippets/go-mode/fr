@@ -3,7 +3,7 @@
 # key: fr
 # contributor: @ayulrizka
 # --
-for ${1:k}, ${2:v} := range ${3} {
-	${4}
+for ${1:k}, ${2:v} := range $3 {
+	$4
 }
-${0}
+$0

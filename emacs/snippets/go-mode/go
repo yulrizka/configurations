@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: goroutine named function
+# key: g
+# contributor: @ayulrizka
+# --
+go ${1:funcName}($0)

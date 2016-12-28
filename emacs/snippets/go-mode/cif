@@ -3,4 +3,4 @@
 # key: cif
 # contributor: @ayulrizka
 # --
-clog.Infof("${1:message}", ${2})
+clog.Infof("${1:message}", $2)

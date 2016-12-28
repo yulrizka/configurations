@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: json:"name"
+# key: json
+# contributor: @ayulrizka
+# --
+\`json:"${1:displayname}"\`

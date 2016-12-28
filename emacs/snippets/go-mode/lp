@@ -3,4 +3,4 @@
 # key: lp
 # contributor: @ayulrizka
 # --
-log.Println("${1}")
+log.Println("$1")

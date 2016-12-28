@@ -3,4 +3,4 @@
 # key: var
 # contributor: @ayulrizka
 # --
-var ${1} ${2} = ${3}
+var $1 $2 = $3

@@ -1,13 +1,8 @@
 # _*_ mode: snippet _*_
-# name: goroutine named function
-# key: g
-# contributor: @ayulrizka
-# --
-go ${1:funcName}(${0})# _*_ mode: snippet _*_
 # name: go func(){ }()
 # key: ga
 # contributor: @ayulrizka
 # --
-go func(${1} ${2:type}) {
+go func($1 ${2:type}) {
 	${3:/* code */}
-}(${0})
+}($0)

@@ -4,6 +4,6 @@
 # contributor: @ayulrizka
 # --
 func Test${1:name}(t *testing.T) {
-	${2}
+	$2
 }
-${0}
+$0

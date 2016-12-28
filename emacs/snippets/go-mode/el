@@ -4,5 +4,5 @@
 # contributor: @ayulrizka
 # --
 else {
-	${1}
+	$1
 }

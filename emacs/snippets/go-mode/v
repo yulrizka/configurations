@@ -3,4 +3,4 @@
 # key: v
 # contributor: @ayulrizka
 # --
-${1} := ${2}
+$1 := $2

@@ -1,0 +1,8 @@
+# _*_ mode: snippet _*_
+# name: type X struct {}
+# key: tst
+# contributor: @ayulrizka
+# --
+type ${1:name} struct {
+	$0
+}

@@ -4,4 +4,4 @@
 # contributor: @ayulrizka
 # --
 case ${1:value}:
-	${0}
+	$0

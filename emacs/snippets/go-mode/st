@@ -3,7 +3,7 @@
 # key: st
 # contributor: @ayulrizka
 # --
-struct ${1:name} {
-	${2:/* data */}
+struct {
+	${1:/* data */}
 }
-${0}
+$0
