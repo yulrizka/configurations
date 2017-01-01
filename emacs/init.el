@@ -96,7 +96,13 @@
 (use-package yasnippet
   :diminish yas-minor-mode
   :config
-  (yas-reload-all))
+  (yas-reload-all)
+  (define-key yas-minor-mode-map (kbd "M-/") 'yas-expand))
+
+(use-package projectile
+  :ensure projectile
+  :config (projectile-global-mode t)
+  :diminish projectile-mode)
 
 ;; Helm
 (use-package helm

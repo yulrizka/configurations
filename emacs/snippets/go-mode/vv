@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: verify.Values
+# key: vv
+# contributor: @ayulrizka
+# --
+verify.Values(t, "${1:${name}}", ${2:${want}}, ${3:${got}})$0
