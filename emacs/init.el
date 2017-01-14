@@ -11,7 +11,7 @@
 (setq mac-option-modifier 'meta) ; set alt-key to meta
 (setq mac-command-modifier 'super)
 (setq mac-escape-modifier nil) ; set esc-key to nil
-
+(windmove-default-keybindings)
 
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/themes/")
@@ -37,6 +37,34 @@
           `((".*" . ,"~/.emacs_temp/")))
     (setq auto-save-file-name-transforms
           `((".*" ,"~/.emacs_temp/" t)))
+
+;; window management - toggle
+(defun toggle-window-split ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+         (next-win-buffer (window-buffer (next-window)))
+         (this-win-edges (window-edges (selected-window)))
+         (next-win-edges (window-edges (next-window)))
+         (this-win-2nd (not (and (<= (car this-win-edges)
+                     (car next-win-edges))
+                     (<= (cadr this-win-edges)
+                     (cadr next-win-edges)))))
+         (splitter
+          (if (= (car this-win-edges)
+             (car (window-edges (next-window))))
+          'split-window-horizontally
+        'split-window-vertically)))
+    (delete-other-windows)
+    (let ((first-win (selected-window)))
+      (funcall splitter)
+      (if this-win-2nd (other-window 1))
+      (set-window-buffer (selected-window) this-win-buffer)
+      (set-window-buffer (next-window) next-win-buffer)
+      (select-window first-win)
+      (if this-win-2nd (other-window 1))))))
+
+(global-set-key (kbd "C-x |") 'toggle-window-split)
 
 ;;; Package
 (require 'package)
@@ -69,7 +97,7 @@
  '(gofmt-command "casimports")
  '(package-selected-packages
    (quote
-    (go-rename helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
+    (multiple-cursors move-text go-rename helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
  '(powerline-default-separator (quote rounded))
  '(whitespace-style (quote (face trailing))))
 (custom-set-faces
@@ -103,6 +131,19 @@
   :ensure projectile
   :config (projectile-global-mode t)
   :diminish projectile-mode)
+
+(use-package multiple-cursors
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+	 ("C->" . mc/mark-next-like-this)
+	 ("C-<" . mc/mark-previous-like-this)
+	 ("C-c C-<" . mc/mark-all-like-this)
+	 ("C-'" . mc/mark-next-like-this-word)
+         ("C-\"" . mc/mark-previous-like-this-word)
+	 ("C-M-'" . mc/unmark-next-like-this)
+	 ("C-M-\"" . mc/unmark-previous-like-this)
+	 ("C-;" . mc/skip-to-next-like-this)
+	 ("C-:" . mc/skip-to-previous-like-this)
+	 ))
 
 ;; Helm
 (use-package helm
@@ -178,9 +219,13 @@
   ; Godef jump key binding
   (local-set-key (kbd "M-.") 'godef-jump)
   (local-set-key (kbd "M-*") 'pop-tag-mark)
+  (local-set-key (kbd "C-c C-h h") 'godoc)
+  (local-set-key (kbd "C-c C-h p") 'godoc-at-point)
 )
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
+;; move-text
+(move-text-default-bindings)
 
 (provide 'init)
 ;;; init.el ends here

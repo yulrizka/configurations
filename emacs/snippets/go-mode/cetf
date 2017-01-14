@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: clog.ErrorTf
+# key: cetf
+# contributor: @ayulrizka
+# --
+clog.ErrorTf(${1:t},"${2:message}", ${3:err})
