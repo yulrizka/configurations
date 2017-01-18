@@ -12,6 +12,7 @@
 (setq mac-command-modifier 'super)
 (setq mac-escape-modifier nil) ; set esc-key to nil
 (windmove-default-keybindings)
+(delete-selection-mode 1) ; replace active region with typed text
 
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/themes/")
@@ -97,7 +98,7 @@
  '(gofmt-command "casimports")
  '(package-selected-packages
    (quote
-    (multiple-cursors move-text go-rename helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
+    (ag expand-region multiple-cursors move-text go-rename helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
  '(powerline-default-separator (quote rounded))
  '(whitespace-style (quote (face trailing))))
 (custom-set-faces
@@ -109,6 +110,10 @@
 
 ;; plugins
 (require 'icas)
+
+(use-package expand-region
+  :ensure t
+  :bind (("C-=" . er/expand-region)))
 
 (use-package flycheck-gometalinter
   :ensure t
@@ -125,7 +130,9 @@
   :diminish yas-minor-mode
   :config
   (yas-reload-all)
-  (define-key yas-minor-mode-map (kbd "M-/") 'yas-expand))
+  (define-key yas-minor-mode-map (kbd "M-l") 'yas-expand)
+  (define-key yas-minor-mode-map (kbd "C-<tab>") 'yas-next-field)
+  )
 
 (use-package projectile
   :ensure projectile
@@ -137,6 +144,7 @@
 	 ("C->" . mc/mark-next-like-this)
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C-<" . mc/mark-all-like-this)
+	 ("C-c C->" . mc/mark-all-words-like-this)
 	 ("C-'" . mc/mark-next-like-this-word)
          ("C-\"" . mc/mark-previous-like-this-word)
 	 ("C-M-'" . mc/unmark-next-like-this)

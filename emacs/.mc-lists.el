@@ -4,9 +4,11 @@
 (setq mc/cmds-to-run-for-all
       '(
 	helm-M-x
+	next-error
 	))
 
 (setq mc/cmds-to-run-once
       '(
 	eval-print-last-sexp
+	helm-buffers-list
 	))
