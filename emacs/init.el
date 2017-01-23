@@ -13,6 +13,7 @@
 (setq mac-escape-modifier nil) ; set esc-key to nil
 (windmove-default-keybindings)
 (delete-selection-mode 1) ; replace active region with typed text
+(tool-bar-mode -1) ; hide toolbar
 
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/themes/")
@@ -21,6 +22,14 @@
 (defvar linum-format "%4d ")
 (show-paren-mode 1)
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+
+(defun switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+(global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
+
 
 ;; history
 (setq savehist-file "~/.emacs.d/savehist")
