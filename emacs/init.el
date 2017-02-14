@@ -1,3 +1,4 @@
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -17,7 +18,6 @@
 
 (global-linum-mode t)
 (add-to-list 'load-path "~/.emacs.d/themes/")
-(add-to-list 'load-path "~/.emacs.d/plugins/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (defvar linum-format "%4d ")
 (show-paren-mode 1)
@@ -99,7 +99,7 @@ Repeated invocations toggle between the two most recently open buffers."
  '(fci-rule-color "#282a2e")
  '(flycheck-check-syntax-automatically (quote (save idle-change new-line mode-enabled)))
  '(flycheck-gometalinter-disable-all t)
- '(flycheck-gometalinter-enable-linters (quote ("gotype" "golint" "vet")))
+ '(flycheck-gometalinter-enable-linters (quote ("casimports" "gotype" "golint" "vet")))
  '(flycheck-gometalinter-tests t)
  '(flycheck-gometalinter-vendor t)
  '(global-flycheck-mode t)
@@ -107,7 +107,7 @@ Repeated invocations toggle between the two most recently open buffers."
  '(gofmt-command "casimports")
  '(package-selected-packages
    (quote
-    (ag expand-region multiple-cursors move-text go-rename helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
+    (magit exec-path-from-shell ggo-mode ag expand-region multiple-cursors move-text go-rename helm-projectile helm-descbinds helm yasnippet spaceline use-package flycheck-gometalinter git-gutter-fringe+ git-gutter-fringe smex go-guru go-autocomplete auto-complete go-mode)))
  '(powerline-default-separator (quote rounded))
  '(whitespace-style (quote (face trailing))))
 (custom-set-faces
@@ -118,8 +118,6 @@ Repeated invocations toggle between the two most recently open buffers."
  )
 
 ;; plugins
-(require 'icas)
-
 (use-package expand-region
   :ensure t
   :bind (("C-=" . er/expand-region)))
@@ -214,6 +212,9 @@ Repeated invocations toggle between the two most recently open buffers."
   :bind (("C-h b" . helm-descbinds)
          ("C-h w" . helm-descbinds)))
 
+(use-package magit
+  :bind (("C-x g" . magit-status)))
+
 ;; git-gutter
 (global-git-gutter-mode +1)
 
@@ -243,6 +244,12 @@ Repeated invocations toggle between the two most recently open buffers."
 
 ;; move-text
 (move-text-default-bindings)
+
+;; use shel env
+(exec-path-from-shell-copy-env "GOPATH")
+(exec-path-from-shell-copy-env "GOROOT")
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 (provide 'init)
 ;;; init.el ends here

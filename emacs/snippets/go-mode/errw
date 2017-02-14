@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: errors.Wrap
+# key: errw
+# contributor: @ayulrizka
+# --
+errors.Wrap(err, "$1")$0

@@ -4,6 +4,5 @@
 # contributor: @ayulrizka
 # --
 for _, ${1:v} := range $2 {
-	$3
+	$0
 }
-$0

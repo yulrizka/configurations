@@ -1,0 +1,6 @@
+# _*_ mode: snippet _*_
+# name: errors.Wrapf
+# key: errwf
+# contributor: @ayulrizka
+# --
+errors.Wrapf(err, "$1", $2)$0
