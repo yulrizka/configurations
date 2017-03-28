@@ -3,4 +3,4 @@
 # key: vv
 # contributor: @ayulrizka
 # --
-verify.Values(t, "${1:${name}}", ${2:${want}}, ${3:${got}})$0
+verify.Values(t, "${1:name}", ${2:want}, ${3:got})$0

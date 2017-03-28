@@ -3,4 +3,4 @@
 # key: ff
 # contributor: @ayulrizka
 # --
-fmt.Printf("${1:${VISUAL}} = %+v\n", $1) // for debugging
+fmt.Printf("${1:VISUAL} = %+v\n", $1) // for debugging

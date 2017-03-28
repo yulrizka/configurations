@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: errors.Errorf
+# key: errf
+# --
+errors.Errorf("$1",$2)
+

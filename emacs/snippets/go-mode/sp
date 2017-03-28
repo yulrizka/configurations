@@ -1,5 +1,5 @@
 # _*_ mode: snippet _*_
-	name: }
+# name: fmt.Sprintf
 # key: sp
 # contributor: @ayulrizka
 # --

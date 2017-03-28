@@ -3,4 +3,4 @@
 # key: c
 # contributor: @ayulrizka
 # --
-const ${1:NAME} = ${0:0}
+const ${1:NAME} = $0

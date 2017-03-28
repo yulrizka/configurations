@@ -1,0 +1,493 @@
+<templateSet group="Golang">
+  <template name="ap" value="$VALUE1$ = append($SLICE$, $VALUE$)$END$" description="append" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SLICE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="bench" value="func Benchmark$NAME$(b *testing.B) {&#10;&#9;for i := 0; i &lt; b.N; i++ {&#10;&#9;&#9;$VALUE2$&#10;&#9;}&#10;}&#10;$END$" description="benchmark function" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="bl" value="bool" description="bool" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="br" value="break" description="break" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="bt" value="byte" description="byte" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="c" value="const $NAME$ = $END$" description="const" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cd" value="clog.Debug($MESSAGE$)" description="clog.Debug" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cdf" value="clog.Debugf(&quot;$MESSAGE$&quot;, $VALUE2$)" description="clog.Debugf" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ce" value="clog.Error($MESSAGE$)" description="clog.Error" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cef" value="clog.Errorf(&quot;$MESSAGE$&quot;, $ERR$)" description="clog.Errorf" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ERR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cetf" value="clog.ErrorTf($T$,&quot;$MESSAGE$&quot;, $ERR$)" description="clog.ErrorTf" toReformat="true" toShortenFQNames="true">
+    <variable name="T" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ERR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cf" value="clog.Fatal($MESSAGE$)" description="clog.Fatal" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cff" value="clog.Fatalf(&quot;$MESSAGE$&quot;, $VALUE2$)" description="clog.Fatalf" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ch" value="chan $INT$" description="channel" toReformat="true" toShortenFQNames="true">
+    <variable name="INT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ci" value="clog.Info($MESSAGE$)" description="clog.Info" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cif" value="clog.Infof(&quot;$MESSAGE$&quot;, $VALUE2$)" description="clog.Infof" toReformat="true" toShortenFQNames="true">
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cn" value="continue" description="continue" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="co" value="const (&#10;&#9;$NAME1$ = iota&#10;&#9;$NAME2$&#10;)" description="constants with iota" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cs" value="case $VALUE$:&#10;&#9;$END$" description="case" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="df" value="defer $FUNC$()" description="defer" toReformat="true" toShortenFQNames="true">
+    <variable name="FUNC" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="dfr" value="defer func() {&#10;&#9;if err := recover(); err != nil {&#10;&#9;&#9;$END$&#10;&#9;}&#10;}()" description="defer recover" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="el" value="else {&#10;&#9;$VALUE1$&#10;}" description="else snippet" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="errf" value="errors.Errorf(&quot;$VALUE1$&quot;,$VALUE2$)&#10;" description="errors.Errorf" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="errl" value="if err != nil {&#10;&#9;clog.Error(err)&#10;}&#10;$END$" description="if err != nil clog.Error()" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="errw" value="errors.Wrap(err, &quot;$VALUE1$&quot;)$END$" description="errors.Wrap" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="errwf" value="errors.Wrapf(err, &quot;$VALUE1$&quot;, $VALUE2$)$END$" description="errors.Wrapf" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="f" value="false" description="false" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="f3" value="float32" description="float32" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="f6" value="float64" description="float64" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ff" value="fmt.Printf(&quot;$VAR$ = %+v\n&quot;, $VAR$) // for debugging" description="fmt.Printf" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="fl" value="float32" description="float" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="fo" value="for $I$ := 0; $VALUE2$ &lt; $COUNT$; $VALUE2$$++$ {&#10;&#9;$VALUE4$&#10;}&#10;$END$" description="for loop" toReformat="true" toShortenFQNames="true">
+    <variable name="I" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COUNT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE4" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="fr" value="for $K$, $V$ := range $VALUE3$ {&#10;&#9;$VALUE4$&#10;}&#10;$END$" description="for range loop" toReformat="true" toShortenFQNames="true">
+    <variable name="K" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="V" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE3" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE4" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="frv" value="for _, $V$ := range $VALUE2$ {&#10;&#9;$END$&#10;}" description="for range loop only value" toReformat="true" toShortenFQNames="true">
+    <variable name="V" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ft" value="fallthrough" description="fallthrough" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="fum" value="func ($TYPE$) $FUNCNAME$($PARAMETERS$) $ERROR$ {&#10;     $END$&#10;}" description="function on receiver" toReformat="true" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FUNCNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ERROR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="fun" value="func $FUNCNAME$($PARAMETERS$) $ERROR$ {&#10;&#9;$BODY$&#10;}&#10;$END$" description="func name()" toReformat="true" toShortenFQNames="true">
+    <variable name="FUNCNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ERROR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="BODY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="ga" value="go func($VALUE1$ $TYPE$) {&#10;&#9;$/* CODE */$&#10;}($END$)" description="go func(){ }()" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="g" value="go $FUNCNAME$($END$)" description="goroutine named function" toReformat="true" toShortenFQNames="true">
+    <variable name="FUNCNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="gof" value="go func($VALUE1$) {&#10;   $END$&#10;}($VALUE2$)" description="goroutine and anonymous func" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="gpl" value="/*&#10; * This program is free software; you can redistribute it and/or modify&#10; * it under the terms of the GNU General Public License as published by&#10; * the Free Software Foundation; either version 2 of the License, or&#10; * (at your option) any later version.&#10; *&#10; * This program is distributed in the hope that it will be useful,&#10; * but WITHOUT ANY WARRANTY; without even the implied warranty of&#10; * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#10; * GNU General Public License for more details.&#10; *&#10; * You should have received a copy of the GNU General Public License&#10; * along with this program; if not, see &lt;http://www.gnu.org/licenses/&gt;.&#10; *&#10; * Copyright (C) $AUTHOR$, `strftime(&quot;%Y&quot;)`&#10; */&#10;&#10;$END$" description="gpl" toReformat="true" toShortenFQNames="true">
+    <variable name="AUTHOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="i" value="int" description="int" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="i32" value="int32" description="int32" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="i6" value="int64" description="int64" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ie" value="if $/* CONDITION */$ {&#10;&#9;$VALUE2$&#10;} else {&#10;&#9;$VALUE3$&#10;}&#10;$END$" description="if else" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE3" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="if" value="if $/* CONDITION */$ {&#10;&#9;$VALUE2$&#10;}" description="if condition" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="im" value="import (&#10;&#9;&quot;$PACKAGE$&quot;&#10;)" description="import" toReformat="true" toShortenFQNames="true">
+    <variable name="PACKAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="in" value="interface{}" description="interface" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_FILE" value="true" />
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="inf" value="interface $NAME$ {&#10;&#9;$/* METHODS */$&#10;}" description="full interface snippet" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ir" value="if err != nil {&#10;&#9;return err&#10;}&#10;$END$" description="error snippet" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="lf" value="log.Printf(&quot;%$S$&quot;, $VAR$)" description="log printf" toReformat="true" toShortenFQNames="true">
+    <variable name="S" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="lp" value="log.Println(&quot;$VALUE1$&quot;)" description="log printf" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mk" value="make($[]STRING$, $0$)" description="make" toReformat="true" toShortenFQNames="true">
+    <variable name="0" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mp" value="map[$STRING$]$INT$" description="map" toReformat="true" toShortenFQNames="true">
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="nw" value="new($TYPE$)" description="new" toReformat="true" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="pf" value="fmt.Printf(&quot;%$S$\n&quot;, $VAR$)" description="print" toReformat="true" toShortenFQNames="true">
+    <variable name="S" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="pl" value="fmt.Println(&quot;$VALUE1$&quot;)" description="print line" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="pmain" value="package main&#10;&#10;func main() {&#10;&#9;$VALUE1$&#10;}&#10;$END$" description="main()" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="pn" value="panic(&quot;$MSG$&quot;)" description="panic" toReformat="true" toShortenFQNames="true">
+    <variable name="MSG" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rn" value="range $END$" description="range" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rs" value="result" description="result" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rt" value="return $END$" description="return" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rtest" value="func Test$NAME$(t *testing.T) {&#10;&#9;RegisterTestingT(t)&#10;&#9;$VALUE2$&#10;}&#10;$END$" description="test Test RegisterTesting" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="sl" value="select {&#10;case $V1$ := &lt;-$CHAN1$&#10;&#9;$VALUE3$&#10;case $V2$ := &lt;-$CHAN2$&#10;&#9;$6&#10;default:&#10;&#9;$END$&#10;}" description="select" toReformat="true" toShortenFQNames="true">
+    <variable name="V1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CHAN1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE3" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="V2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CHAN2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sp" value="fmt.Sprintf(&quot;%$S$&quot;, $VAR$)" description="fmt.Sprintf" toReformat="true" toShortenFQNames="true">
+    <variable name="S" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sr" value="string" description="string" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="st" value="struct {&#10;    $END$&#9;&#10;}&#10;" description="struct" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="sw" value="switch $VAR$ {&#10;case $VALUE1$:&#10;&#9;$VALUE3$&#10;case $VALUE2$:&#10;&#9;$VALUE5$&#10;default:&#10;&#9;$END$" description="switch" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE3" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE5" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="t" value="true" description="true" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="terr" value="if err != nil {&#10;&#9;t.Error(err)&#10;}&#10;$END$" description="err != nil t.Error" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="test" value="func Test$NAME$(t *testing.T) {&#10;&#9;$VALUE2$&#10;}&#10;$END$" description="func Test" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="tst" value="type $NAME$ struct {&#10;&#9;$END$&#10;}" description="type X struct {}" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="v" value="$VALUE1$ := $VALUE2$" description="shorthand variable declaration" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="var" value="var $VALUE1$ $VALUE2$ = $VALUE3$" description="variable declaration" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE3" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="vars" value="var (&#10;&#9;$VALUE1$ $VALUE2$ = $VALUE3$&#10;)" description="variables declaration" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE3" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="vr" value="var $T$ $STRING$" description="variable initialization" toReformat="true" toShortenFQNames="true">
+    <variable name="T" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STRING" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="vv" value="verify.Values(t, &quot;$NAME$&quot;, $WANT$, $GOT$)$END$" description="verify.Values" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="WANT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="GOT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

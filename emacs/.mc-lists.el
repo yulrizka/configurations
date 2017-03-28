@@ -11,4 +11,5 @@
       '(
 	eval-print-last-sexp
 	helm-buffers-list
+	keyboard-escape-quit
 	))
