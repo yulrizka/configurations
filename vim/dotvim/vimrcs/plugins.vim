@@ -47,7 +47,7 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Golang
 " :GoInstallBinaries
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 
 " YouCompleteMe
 " sudo apt-get install build-essential cmake python-dev;cd ~/.vim/bundle/YouCompleteMe;./install.sh
