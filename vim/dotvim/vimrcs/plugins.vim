@@ -72,7 +72,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Fugitive
 autocmd User Fugitive
-      \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+      \ if get(b:, 'fugitive_type', '') =~# '^\%(tree\|blob\)$' |
       \   nnoremap <buffer> .. :edit %:h<CR> |
       \ endif
 
