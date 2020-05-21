@@ -1,0 +1,786 @@
+// {
+// Place your snippets for go here. Each snippet is defined under a snippet name and has a prefix, body and 
+// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+// same ids are connected.
+// Example:
+// "Print to console": {
+// 	"prefix": "log",
+// 	"body": [
+// 		"console.log('$1');",
+// 		"$2"
+// 	],
+// 	"description": "Log output to console"
+// }
+// }
+{
+    "Surround with if error": {
+        "prefix": "ife",
+        "body": [
+            "if err := $SELECTION$; err != nil {",
+            "    ",
+            "}"
+        ],
+        "description": "Surround with if error"
+    },
+    "Wrap errror with golang": {
+        "prefix": "errw",
+        "body": [
+            "fmt.Errorf(\"$1: %w\", ${2:another})"
+        ],
+        "description": "Wrap errror with golang"
+    },
+    "append": {
+        "prefix": "ap",
+        "body": [
+            "$1 = append($1, $2)"
+        ],
+        "description": "append"
+    },
+    "benchmark function": {
+        "prefix": "bench",
+        "body": [
+            "func Benchmark$1(b *testing.B) {",
+            "\tfor i := 0; i \u003c b.N; i++ {",
+            "\t\t$2",
+            "\t}",
+            "}",
+            ""
+        ],
+        "description": "benchmark function"
+    },
+    "bool": {
+        "prefix": "bl",
+        "body": [
+            "bool"
+        ],
+        "description": "bool"
+    },
+    "break": {
+        "prefix": "br",
+        "body": [
+            "break"
+        ],
+        "description": "break"
+    },
+    "byte": {
+        "prefix": "bt",
+        "body": [
+            "byte"
+        ],
+        "description": "byte"
+    },
+    "case": {
+        "prefix": "cs",
+        "body": [
+            "case $1:",
+            "\t"
+        ],
+        "description": "case"
+    },
+    "channel": {
+        "prefix": "ch",
+        "body": [
+            "chan $1"
+        ],
+        "description": "channel"
+    },
+    "clog.Debug": {
+        "prefix": "cd",
+        "body": [
+            "clog.Debug($1)"
+        ],
+        "description": "clog.Debug"
+    },
+    "clog.Debugf": {
+        "prefix": "cdf",
+        "body": [
+            "clog.Debugf(\"$1\", $2)"
+        ],
+        "description": "clog.Debugf"
+    },
+    "clog.Error": {
+        "prefix": "ce",
+        "body": [
+            "clog.Error($1)"
+        ],
+        "description": "clog.Error"
+    },
+    "clog.ErrorTf": {
+        "prefix": "cetf",
+        "body": [
+            "clog.ErrorTf($1,\"$2\", $3)"
+        ],
+        "description": "clog.ErrorTf"
+    },
+    "clog.Errorf": {
+        "prefix": "cef",
+        "body": [
+            "clog.Errorf(\"$1\", $2)"
+        ],
+        "description": "clog.Errorf"
+    },
+    "clog.Fatal": {
+        "prefix": "cf",
+        "body": [
+            "clog.Fatal($1)"
+        ],
+        "description": "clog.Fatal"
+    },
+    "clog.Fatalf": {
+        "prefix": "cff",
+        "body": [
+            "clog.Fatalf(\"$1\", $2)"
+        ],
+        "description": "clog.Fatalf"
+    },
+    "clog.Info": {
+        "prefix": "ci",
+        "body": [
+            "clog.Info($1)"
+        ],
+        "description": "clog.Info"
+    },
+    "clog.InfoTf": {
+        "prefix": "citf",
+        "body": [
+            "clog.InfoTf($1,\"$2\", $3)"
+        ],
+        "description": "clog.InfoTf"
+    },
+    "clog.Infof": {
+        "prefix": "cif",
+        "body": [
+            "clog.Infof(\"$1\", $2)"
+        ],
+        "description": "clog.Infof"
+    },
+    "const": {
+        "prefix": "c",
+        "body": [
+            "const $1 = "
+        ],
+        "description": "const"
+    },
+    "constants with iota": {
+        "prefix": "co",
+        "body": [
+            "const (",
+            "\t$1 = iota",
+            "\t$2",
+            ")"
+        ],
+        "description": "constants with iota"
+    },
+    "continue": {
+        "prefix": "cn",
+        "body": [
+            "continue"
+        ],
+        "description": "continue"
+    },
+    "create a cobra command": {
+        "prefix": "cobracommand",
+        "body": [
+            "func Build$1() *cobra.Command {",
+            "\t$1Cmd := \u0026cobra.Command{",
+            "\t\tUse:   \"\",",
+            "\t\tShort: \"\",",
+            "\t\tRun: func(cmd *cobra.Command, args []string) {",
+            "\t\t\tctx := context.Background()",
+            "\t\t\tmustDo$1(ctx)",
+            "\t\t},",
+            "\t}",
+            "",
+            "\treturn $1Cmd",
+            "}",
+            "",
+            "func mustDo$1(ctx context.Context) {",
+            "}",
+            ""
+        ],
+        "description": "create a cobra command"
+    },
+    "defer": {
+        "prefix": "df",
+        "body": [
+            "defer $1()"
+        ],
+        "description": "defer"
+    },
+    "defer recover": {
+        "prefix": "dfr",
+        "body": [
+            "defer func() {",
+            "\tif err := recover(); err != nil {",
+            "\t\t",
+            "\t}",
+            "}()"
+        ],
+        "description": "defer recover"
+    },
+    "else snippet": {
+        "prefix": "el",
+        "body": [
+            "else {",
+            "\t$1",
+            "}"
+        ],
+        "description": "else snippet"
+    },
+    "err != nil t.Error": {
+        "prefix": "terr",
+        "body": [
+            "if err != nil {",
+            "\tt.Error(err)",
+            "}",
+            ""
+        ],
+        "description": "err != nil t.Error"
+    },
+    "error snippet": {
+        "prefix": "ir",
+        "body": [
+            "if err != nil {",
+            "\treturn err",
+            "}",
+            ""
+        ],
+        "description": "error snippet"
+    },
+    "errors.Errorf": {
+        "prefix": "errf",
+        "body": [
+            "errors.Errorf(\"$1\",$2)",
+            ""
+        ],
+        "description": "errors.Errorf"
+    },
+    "fallthrough": {
+        "prefix": "ft",
+        "body": [
+            "fallthrough"
+        ],
+        "description": "fallthrough"
+    },
+    "false": {
+        "prefix": "f",
+        "body": [
+            "false"
+        ],
+        "description": "false"
+    },
+    "float": {
+        "prefix": "fl",
+        "body": [
+            "float32"
+        ],
+        "description": "float"
+    },
+    "float32": {
+        "prefix": "f3",
+        "body": [
+            "float32"
+        ],
+        "description": "float32"
+    },
+    "float64": {
+        "prefix": "f6",
+        "body": [
+            "float64"
+        ],
+        "description": "float64"
+    },
+    "fmt.Printf": {
+        "prefix": "ff",
+        "body": [
+            "fmt.Printf(\"$1 = %+v\\n\", $1) // TODO:for debugging"
+        ],
+        "description": "fmt.Printf"
+    },
+    "fmt.Printf %x": {
+        "prefix": "ffx",
+        "body": [
+            "fmt.Printf(\"$1 = % x\\n\", $1) // for debugging"
+        ],
+        "description": "fmt.Printf %x"
+    },
+    "fmt.Sprintf": {
+        "prefix": "sp",
+        "body": [
+            "fmt.Sprintf(\"%$1\", $2)"
+        ],
+        "description": "fmt.Sprintf"
+    },
+    "for loop": {
+        "prefix": "fori",
+        "body": [
+            "for $1 := 0; $1 \u003c $2; $1++ {",
+            "\t$3",
+            "}",
+            ""
+        ],
+        "description": "for loop"
+    },
+    "for range loop": {
+        "prefix": "fr",
+        "body": [
+            "for $1, $2 := range $3 {",
+            "\t$4",
+            "}",
+            ""
+        ],
+        "description": "for range loop"
+    },
+    "for range loop only value": {
+        "prefix": "frv",
+        "body": [
+            "for _, $1 := range $2 {",
+            "\t",
+            "}"
+        ],
+        "description": "for range loop only value"
+    },
+    "for range loop only value with context": {
+        "prefix": "forctx",
+        "body": [
+            "for {",
+            "    select {",
+            "    case \u003c-ctx.Done():",
+            "        return",
+            "    case $1:",
+            "        ",
+            "    default:",
+            "    }",
+            "}"
+        ],
+        "description": "for range loop only value with context"
+    },
+    "full interface snippet": {
+        "prefix": "inf",
+        "body": [
+            "interface $1 {",
+            "\t$/* METHODS */$",
+            "}"
+        ],
+        "description": "full interface snippet"
+    },
+    "func Test": {
+        "prefix": "test",
+        "body": [
+            "func Test$1(t *testing.T) {",
+            "\t$2",
+            "}",
+            ""
+        ],
+        "description": "func Test"
+    },
+    "func Test with table": {
+        "prefix": "testtable",
+        "body": [
+            "func TestTest$1(t *testing.T) {",
+            "\ttests := map[string]struct {",
+            "        $2",
+            "\t}{",
+            "        $3",
+            "\t}",
+            "",
+            "\tfor name, tt := range tests {",
+            "\t\tt.Run(name, func(t *testing.T) {",
+            "\t\t    ",
+            "\t\t})",
+            "\t}",
+            "}"
+        ],
+        "description": "func Test with table"
+    },
+    "func name()": {
+        "prefix": "fun",
+        "body": [
+            "func $1($2) $3 {",
+            "\t$4",
+            "}",
+            ""
+        ],
+        "description": "func name()"
+    },
+    "func(ResponseWriter, http.Request)": {
+        "prefix": "handlef",
+        "body": [
+            "func(w http.ResponseWriter, r *http.Request) {",
+            "\t$1",
+            "}"
+        ],
+        "description": "func(ResponseWriter, http.Request)"
+    },
+    "function on receiver": {
+        "prefix": "fum",
+        "body": [
+            "func ($1) $2($3) $4 {",
+            "     ",
+            "}"
+        ],
+        "description": "function on receiver"
+    },
+    "go func(){ }()": {
+        "prefix": "ga",
+        "body": [
+            "go func($1 $2) {",
+            "\t$/* CODE */$",
+            "}()"
+        ],
+        "description": "go func(){ }()"
+    },
+    "goroutine and anonymous func": {
+        "prefix": "gof",
+        "body": [
+            "go func($1) {",
+            "   ",
+            "}($2)"
+        ],
+        "description": "goroutine and anonymous func"
+    },
+    "goroutine named function": {
+        "prefix": "g",
+        "body": [
+            "go $1()"
+        ],
+        "description": "goroutine named function"
+    },
+    "gpl": {
+        "prefix": "gpl",
+        "body": [
+            "/*",
+            " * This program is free software; you can redistribute it and/or modify",
+            " * it under the terms of the GNU General Public License as published by",
+            " * the Free Software Foundation; either version 2 of the License, or",
+            " * (at your option) any later version.",
+            " *",
+            " * This program is distributed in the hope that it will be useful,",
+            " * but WITHOUT ANY WARRANTY; without even the implied warranty of",
+            " * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+            " * GNU General Public License for more details.",
+            " *",
+            " * You should have received a copy of the GNU General Public License",
+            " * along with this program; if not, see \u003chttp://www.gnu.org/licenses/\u003e.",
+            " *",
+            " * Copyright (C) $1, `strftime(\"%Y\")`",
+            " */",
+            "",
+            ""
+        ],
+        "description": "gpl"
+    },
+    "if condition": {
+        "prefix": "if",
+        "body": [
+            "if $/* CONDITION */$ {",
+            "\t$1",
+            "}"
+        ],
+        "description": "if condition"
+    },
+    "if else": {
+        "prefix": "ie",
+        "body": [
+            "if $/* CONDITION */$ {",
+            "\t$1",
+            "} else {",
+            "\t$2",
+            "}",
+            ""
+        ],
+        "description": "if else"
+    },
+    "if err != nil clog.Error()": {
+        "prefix": "errl",
+        "body": [
+            "if err != nil {",
+            "\tclog.Error(err)",
+            "}",
+            ""
+        ],
+        "description": "if err != nil clog.Error()"
+    },
+    "import": {
+        "prefix": "im",
+        "body": [
+            "import (",
+            "\t\"$1\"",
+            ")"
+        ],
+        "description": "import"
+    },
+    "int": {
+        "prefix": "i",
+        "body": [
+            "int"
+        ],
+        "description": "int"
+    },
+    "int32": {
+        "prefix": "i32",
+        "body": [
+            "int32"
+        ],
+        "description": "int32"
+    },
+    "int64": {
+        "prefix": "i6",
+        "body": [
+            "int64"
+        ],
+        "description": "int64"
+    },
+    "interface": {
+        "prefix": "in",
+        "body": [
+            "interface{}"
+        ],
+        "description": "interface"
+    },
+    "log printf": {
+        "prefix": "lf",
+        "body": [
+            "log.Printf(\"%$1\", $2)"
+        ],
+        "description": "log printf"
+    },
+    "log printf line": {
+        "prefix": "lp",
+        "body": [
+            "log.Println(\"$1\")"
+        ],
+        "description": "log printf line"
+    },
+    "main()": {
+        "prefix": "pmain",
+        "body": [
+            "package main",
+            "",
+            "func main() {",
+            "\t$1",
+            "}",
+            ""
+        ],
+        "description": "main()"
+    },
+    "make": {
+        "prefix": "mk",
+        "body": [
+            "make($[]STRING$, $1)"
+        ],
+        "description": "make"
+    },
+    "map": {
+        "prefix": "mp",
+        "body": [
+            "map[$1]$2"
+        ],
+        "description": "map"
+    },
+    "new": {
+        "prefix": "nw",
+        "body": [
+            "new($1)"
+        ],
+        "description": "new"
+    },
+    "panic": {
+        "prefix": "pn",
+        "body": [
+            "panic(\"$1\")"
+        ],
+        "description": "panic"
+    },
+    "print": {
+        "prefix": "pf",
+        "body": [
+            "fmt.Printf(\"%$1\\n\", $2)"
+        ],
+        "description": "print"
+    },
+    "print line": {
+        "prefix": "pl",
+        "body": [
+            "fmt.Println(\"$1\") // for debugging"
+        ],
+        "description": "print line"
+    },
+    "range": {
+        "prefix": "rn",
+        "body": [
+            "range "
+        ],
+        "description": "range"
+    },
+    "result": {
+        "prefix": "rs",
+        "body": [
+            "result"
+        ],
+        "description": "result"
+    },
+    "return": {
+        "prefix": "rt",
+        "body": [
+            "return "
+        ],
+        "description": "return"
+    },
+    "return error if not nil": {
+        "prefix": "errn",
+        "body": [
+            "if err != nil {",
+            "    $1",
+            "}",
+            ""
+        ],
+        "description": "return error if not nil"
+    },
+    "return errors.Wrap": {
+        "prefix": "rerrw",
+        "body": [
+            "return errors.Wrap(err, \"$1\")"
+        ],
+        "description": "return errors.Wrap"
+    },
+    "return wrap(error) if not nil": {
+        "prefix": "errwn",
+        "body": [
+            "if err != nil {",
+            "    return errors.Wrap(err, \"$1\")",
+            "}"
+        ],
+        "description": "return wrap(error) if not nil"
+    },
+    "select": {
+        "prefix": "sl",
+        "body": [
+            "select {",
+            "case $1 := \u003c-$2",
+            "\t$3",
+            "case $4 := \u003c-$5",
+            "\t$6",
+            "default:",
+            "\t",
+            "}"
+        ],
+        "description": "select"
+    },
+    "select with context": {
+        "prefix": "selctx",
+        "body": [
+            "select {",
+            "case \u003c-ctx.Done():",
+            "    return",
+            "case $1:",
+            "    ",
+            "}"
+        ],
+        "description": "select with context"
+    },
+    "shorthand variable declaration": {
+        "prefix": "v",
+        "body": [
+            "$1 := $2"
+        ],
+        "description": "shorthand variable declaration"
+    },
+    "string": {
+        "prefix": "sr",
+        "body": [
+            "string"
+        ],
+        "description": "string"
+    },
+    "struct": {
+        "prefix": "st",
+        "body": [
+            "struct {",
+            "    \t",
+            "}",
+            ""
+        ],
+        "description": "struct"
+    },
+    "switch": {
+        "prefix": "sw",
+        "body": [
+            "switch $1 {",
+            "case $2:",
+            "\t$3",
+            "case $4:",
+            "\t$5",
+            "default:",
+            "\t"
+        ],
+        "description": "switch"
+    },
+    "t.Run": {
+        "prefix": "trun",
+        "body": [
+            "t.Run(${1:another}, func(t *testing.T) {",
+            "    ",
+            "})"
+        ],
+        "description": "t.Run"
+    },
+    "test Test RegisterTesting": {
+        "prefix": "rtest",
+        "body": [
+            "func Test$1(t *testing.T) {",
+            "\tRegisterTestingT(t)",
+            "\t$2",
+            "}",
+            ""
+        ],
+        "description": "test Test RegisterTesting"
+    },
+    "true": {
+        "prefix": "t",
+        "body": [
+            "true"
+        ],
+        "description": "true"
+    },
+    "type X struct {}": {
+        "prefix": "tst",
+        "body": [
+            "type $1 struct {",
+            "\t",
+            "}"
+        ],
+        "description": "type X struct {}"
+    },
+    "variable declaration": {
+        "prefix": "var",
+        "body": [
+            "var $1 $2 = $3"
+        ],
+        "description": "variable declaration"
+    },
+    "variable initialization": {
+        "prefix": "vr",
+        "body": [
+            "var $1 $2"
+        ],
+        "description": "variable initialization"
+    },
+    "variables declaration": {
+        "prefix": "vars",
+        "body": [
+            "var (",
+            "\t$1 $2 = $3",
+            ")"
+        ],
+        "description": "variables declaration"
+    },
+    "verify.Values": {
+        "prefix": "vv",
+        "body": [
+            "verify.Values(t, \"$1\", $2, $3)"
+        ],
+        "description": "verify.Values"
+    }
+}
