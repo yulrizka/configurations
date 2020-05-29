@@ -1,7 +1,3 @@
-alias gia='git add --all'
-alias gic='git checkout'
-alias gfo='git fetch origin'
-alias gim='git merge'
 alias gis='git status -sb'
 alias gla='git log --graph --pretty=format:'\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --tags --branches'
 alias gib='git branch'
