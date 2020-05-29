@@ -98,5 +98,6 @@
         }
     },
     "diffEditor.renderSideBySide": true,
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.suggestSmartCommit": false
 }
