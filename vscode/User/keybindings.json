@@ -1,0 +1,25 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+alt+=",
+        "command": "editsHistory.moveCursorToPreviouslyEditedFile"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-editsHistory.moveCursorToPreviouslyEditedFile"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+v",
+        "command": "toggleVim"
+    }
+]

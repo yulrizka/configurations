@@ -1,4 +1,7 @@
 alias gia='git add --all'
+alias gic='git checkout'
+alias gfo='git fetch origin'
+alias gim='git merge'
 alias gis='git status -sb'
 alias gla='git log --graph --pretty=format:'\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --tags --branches'
 alias gib='git branch'
@@ -12,6 +15,9 @@ alias gl='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgr
 alias i='cd ~/dev/ecg-icas/icas'
 alias dc='docker-compose'
 alias gicm='git commit -m'
+alias gprs='git pull --rebase --autostash'
+
+alias k=kubectl
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 

@@ -1,0 +1,102 @@
+{
+    "telemetry.enableTelemetry": false,
+    "git.autofetch": true,
+    "workbench.activityBar.visible": true,
+    "window.menuBarVisibility": "default",
+    "githubPullRequests.logLevel": "debug",
+    "go.goroot": "/home/abi/go1.14.3",
+    "go.useLanguageServer": true,
+    "go.formatTool": "goimports",
+    "editor.formatOnSave": true,
+    "window.zoomLevel": 0,
+    "githubPullRequests.telemetry.enabled": false,
+    "vim.easymotion": false,
+    "vim.useCtrlKeys": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-f>": false,
+        "<C-k>": false,
+        "<C-t>": false
+    },
+    "postfixGo.customTemplates": [
+        {
+            "name": "ff",
+            "description": "print variable",
+            "body": "fmt.Printf(\"{{expr}} = %+v\", {{expr}}) // TODO: for debugging",
+            "when": [
+                "identifier",
+                "expression"
+            ]
+        }
+    ],
+    "workbench.colorTheme": "Dracula Soft",
+    "vs-kubernetes": {
+        "vs-kubernetes.helm-path.linux": "/home/abi/.vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vs-kubernetes.draft-path.linux": "/home/abi/.vs-kubernetes/tools/draft/linux-amd64/draft",
+        "vs-kubernetes.minikube-path.linux": "/home/abi/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    },
+    "editor.tokenColorCustomizations": {
+        "[Dracula Soft]": {
+            "functions": "#8AC6F2",
+            "keywords": "#8AC6F2",
+            "textMateRules": [
+                {
+                    "scope": "keyword",
+                    "settings": {
+                        "foreground": "#8Ac6F2",
+                    }
+                },
+                {
+                    "scope": "keyword.operator",
+                    "settings": {
+                        "foreground": "#c4c4c4",
+                    }
+                },
+                {
+                    "scope": "string",
+                    "settings": {
+                        "foreground": "#c3c980",
+                    }
+                },
+                {
+                    "scope": "constant",
+                    "settings": {
+                        "foreground": "#E5796D",
+                    }
+                },
+                {
+                    "scope": "constant.character.escape",
+                    "settings": {
+                        "foreground": "#E5796D",
+                    }
+                },
+                {
+                    "scope": "constant.language",
+                    "settings": {
+                        "foreground": "#8AC6F2",
+                    }
+                },
+                {
+                    "scope": "keyword.function",
+                    "settings": {
+                        "foreground": "#8AC6F2",
+                    }
+                },
+                {
+                    "scope": "entity.name.function",
+                    "settings": {
+                        "foreground": "#DFE2DA",
+                    }
+                },
+                {
+                    "scope": "entity.name.type",
+                    "settings": {
+                        "foreground": "#DFE2DA",
+                    }
+                }
+            ]
+        }
+    },
+    "diffEditor.renderSideBySide": true,
+    "diffEditor.ignoreTrimWhitespace": false
+}
