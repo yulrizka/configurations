@@ -17,7 +17,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.48777967691421509
   },
-  "Normal Font" : "MesloLGM-RegularForPowerline 12",
+  "Normal Font" : "MonacoForPowerline 13",
   "Bold Color" : {
     "Green Component" : 0.91671288009999996,
     "Blue Component" : 0.91648769379999995,
@@ -90,7 +90,7 @@
   },
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
-  "Non Ascii Font" : "Monaco 12",
+  "Non Ascii Font" : "Monaco for Powerline 13",
   "Vertical Spacing" : 1,
   "Use Bold Font" : true,
   "Option Key Sends" : 2,
