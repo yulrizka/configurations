@@ -99,5 +99,6 @@
     },
     "diffEditor.renderSideBySide": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "git.suggestSmartCommit": false
+    "git.suggestSmartCommit": false,
+    "extensions.ignoreRecommendations": false
 }

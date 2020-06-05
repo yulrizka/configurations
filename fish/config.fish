@@ -1,6 +1,8 @@
 alias gis='git status -sb'
 alias gla='git log --graph --pretty=format:'\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --tags --branches'
 alias gib='git branch'
+alias gia='git add'
+alias gic='git checkout'
 alias gg='git gui citool'
 alias grbi='git rebase -i'
 alias gcp='git cherry-pick'

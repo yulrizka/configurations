@@ -24,7 +24,7 @@
 	"Wrap errror with golang": {
 		"prefix": "errw",
 		"body": [
-			"fmt.Errorf(\"$1: %w\", ${2:another})"
+			"fmt.Errorf(\"$1: %w\", ${2:err})"
 		],
 		"description": "Wrap errror with golang"
 	},
