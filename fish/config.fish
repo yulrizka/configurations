@@ -17,6 +17,7 @@ alias dc='docker-compose'
 alias dcupd='docker-compose up -d'
 alias k=kubectl
 alias r=ranger
+alias l='ls -alh'
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
