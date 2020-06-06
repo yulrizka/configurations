@@ -4,6 +4,7 @@ alias gib='git branch'
 alias gia='git add'
 alias gic='git checkout'
 alias gg='git gui citool'
+alias gfo='git fetch origin'
 alias grbi='git rebase -i'
 alias gcp='git cherry-pick'
 alias ghpr='git fetch origin;git rebase origin/master && git push -u && hub pull-request'
@@ -14,8 +15,8 @@ alias gicm='git commit -m'
 alias gprs='git pull --rebase --autostash'
 alias dc='docker-compose'
 alias dcupd='docker-compose up -d'
-
 alias k=kubectl
+alias r=ranger
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
