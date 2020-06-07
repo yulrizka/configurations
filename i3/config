@@ -5,8 +5,6 @@ set $mod Mod4
 set $SHELL /bin/zsh
 set $term terminator
 
-
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -82,7 +80,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+control+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -168,18 +166,26 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#        status_command i3status
+#}
 exec_always xmodmap ~/.xmodmap
 exec --no-startup-id ~/.screenlayout/default.sh
-exec --no-startup-id clipit
+exec --no-startup-id clipmenud
 
+# background
+exec feh --bg-scale /media/data/pictures/background/ori-and-the-blind-forest-spirit-tree-1e-1920x1080.jpg
 
 # rofi
-bindsym $mod+d exec rofi -show drun -show-icons
+bindsym $mod+space exec rofi -show drun -show-icons
 bindsym $mod+ctrl+d exec $term -x ranger
-bindsym $mod+shift+w exec rofi -show win
+bindsym $mod+ctrl+w exec rofi -show win
+bindsym $mod+ctrl+v exec CM_LAUNCHER=rofi clipmenu
+bindsym $mod+ctrl+l exec ~/.config/rofi/scripts/lastpass-rofi.sh yulrizka@gmail.com
+
+
+# polybar
+exec --no-startup-id ~/.config/polybar/launch.sh
 
 ## ScratchPad
 # Make the currently focused window a scratchpad
