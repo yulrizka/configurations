@@ -73,6 +73,7 @@ line=$(lpass ls -l | cut -c 18- | \
 
 if [ -n "$line" ]; then
     pass_id=$(echo "$line" | sed -E 's/.*\t{10,}([0-9]+)/\1/g;t;d')
-    echo $pass_id
+    clipctl disable
     echo -n "$(lpass show "$pass_id" --$MODE)" | xclip -selection clipboard
+    clipctl enable
 fi
