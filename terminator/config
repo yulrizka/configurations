@@ -4,12 +4,13 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_color = "#303030"
+    background_color = "#2e3440"
     cursor_color = "#c5c8c6"
-    font = Meslo LG S DZ for Powerline 10
-    foreground_color = "#c5c8c6"
+    font = Source Code Pro for Powerline Medium 11
+    foreground_color = "#d8dee9"
     show_titlebar = False
     scrollback_lines = 50000
+    palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
     use_system_font = False
   [[white]]
     cursor_color = "#aaaaaa"
@@ -41,6 +42,11 @@
     foreground_color = "#dcdcdc"
     show_titlebar = False
     palette = "#3f3f3f:#cc9393:#7f9f7f:#e3ceab:#dfaf8f:#cc9393:#8cd0d3:#dcdccc:#3f3f3f:#cc9393:#7f9f7f:#e3ceab:#dfaf8f:#cc9393:#8cd0d3:#dcdccc"
+  [[nord]]
+    background_color = "#2e3440"
+    cursor_color = "#eee8d5"
+    foreground_color = "#d8dee9"
+    palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
 [layouts]
   [[default]]
     [[[child1]]]

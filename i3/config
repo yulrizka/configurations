@@ -178,10 +178,12 @@ exec feh --bg-scale /media/data/pictures/background/ori-and-the-blind-forest-spi
 
 # rofi
 bindsym $mod+space exec rofi -show drun -show-icons
-bindsym $mod+ctrl+d exec $term -x ranger
+bindsym $mod+ctrl+e exec $term -x ranger
 bindsym $mod+ctrl+w exec rofi -show win
 bindsym $mod+ctrl+v exec CM_LAUNCHER=rofi clipmenu
 bindsym $mod+ctrl+l exec ~/.config/rofi/scripts/lastpass-rofi.sh yulrizka@gmail.com
+bindsym $mod+ctrl+r exec rofi -show run
+bindsym $mod+ctrl+c exec ~/.config/conky/toggle
 
 
 # polybar

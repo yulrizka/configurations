@@ -12,9 +12,9 @@
     //dark
     //-----
     background-color: transparent;
-    background: #06030Ab0;
+    background: #2E3440b0;
     //background: #657B83dd;
-    foreground: #FFFFFF;
+    foreground: #ECEFF4;
     background-alt: #2D6AD6;
     foreground-alt: #FFFFFF;
     border-color: @background;

@@ -1,0 +1,8 @@
+#!/bin/bash
+if pgrep -x "conky" >/dev/null
+then
+  killall -q conky
+  sleep 1
+else
+  conky -c ~/.config/conky/conky.conf &
+fi
