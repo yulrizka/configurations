@@ -12,9 +12,11 @@ alias gitka='gitk --tags --branches'
 alias gd='git diff'
 alias gl='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
 alias gicm='git commit -m'
+alias gim='git merge'
 alias gprs='git pull --rebase --autostash'
 alias dc='docker-compose'
 alias dcupd='docker-compose up -d'
+alias dcup='docker-compose up'
 alias k=kubectl
 alias r=ranger
 alias l='ls -alh'

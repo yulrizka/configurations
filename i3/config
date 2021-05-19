@@ -20,10 +20,6 @@ font pango:DroidSansMono 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec terminator
-
 bindsym Mod1+e exec "nautilus --no-desktop"
 
 # kill focused window
@@ -40,6 +36,7 @@ workspace 7 output DVI-D-0
 workspace 8 output DVI-D-0
 workspace 9 output DVI-D-0
 workspace 10 output HDMI-0
+bindsym $mod+Tab workspace back_and_forth
 
 # change focus
 bindsym $mod+h focus left
@@ -188,6 +185,12 @@ bindsym $mod+ctrl+l exec ~/.config/rofi/scripts/lastpass-rofi.sh yulrizka@gmail.
 bindsym $mod+ctrl+r exec rofi -show run
 bindsym $mod+ctrl+c exec ~/.config/conky/toggle
 
+# app sortcut
+bindsym $mod+ctrl+s exec gnome-screenshot -i
+
+# start a terminal
+bindsym $mod+Return exec terminator
+bindsym $mod+shift+Return exec firefox -new-window
 
 # polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
@@ -204,6 +207,9 @@ bindsym $mod+Mod1+0 [con_mark="scratch-0"] scratchpad show
 
 bindsym $mod+Shift+Mod1+9 mark "scratch-9", move scratchpad
 bindsym $mod+Mod1+9 [con_mark="scratch-9"] scratchpad show
+
+bindsym $mod+Shift+Mod1+8 mark "scratch-8", move scratchpad
+bindsym $mod+Mod1+8 [con_mark="scratch-8"] scratchpad show
 
 
 # media key binding to spotify
