@@ -20,10 +20,21 @@ alias dc='docker-compose'
 alias dcup='docker-compose up'
 alias dcupd='docker-compose up -d'
 alias dcup='docker-compose up'
+#alias klf='kubectl logs -f'
+alias r=ranger
+alias l='ls'
+alias ll='ls -alh'
+alias f='fzf'
+alias cl='clear'
+
+alias gcurld='grpcurl -d @ -plaintext localhost:10000'
+alias gcurl='grpcurl -plaintext localhost:10000'
+
 alias k=kubectl
 alias kx=kubectx
 alias kd='kubectl describe'
 alias kg='kubectl get'
+alias kgp='kubectl get pods'
 alias kdd='kubectl delete'
 alias kl='kubectl logs'
 #alias klf='kubectl logs -f'
@@ -38,6 +49,11 @@ alias gcurl='grpcurl -plaintext localhost:10000'
 alias kxd='kx westeurope-dev'
 alias kxs='kx westeurope-staging'
 alias kxp='kx westeurope-prod'
-alias kxdd='kx shellai-westeurope-dev'
-alias kxss='kx shellai-westeurope-staging'
-alias kxpp='kx shellai-westeurope-prod'
+alias kxpp='kx westeurope-prod-user'
+alias kc='k config current-context'
+alias kcs='k config set-context --current --namespace=strawberry'
+alias kcp='k config set-context --current --namespace=pineapple'
+
+alias be='cd ~/dev/shell/strawberry-be'
+alias api='cd ~/dev/shell/strawberry-api'
+alias e="op run --env-file=.env --"
