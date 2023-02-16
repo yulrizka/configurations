@@ -28,7 +28,8 @@ alias kdd='kubectl delete'
 alias kl='kubectl logs'
 #alias klf='kubectl logs -f'
 alias r=ranger
-alias l='ls -alh'
+alias ls='exa'
+alias l='exa -alh'
 alias f='fzf'
 
 alias gcurld='grpcurl -d @ -plaintext localhost:10000'
@@ -40,10 +41,3 @@ alias kxp='kx westeurope-prod'
 alias kxdd='kx shellai-westeurope-dev'
 alias kxss='kx shellai-westeurope-staging'
 alias kxpp='kx shellai-westeurope-prod'
-
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
-rvm default
-
-set -x YVM_DIR /usr/local/Cellar/yvm/4.0.1
-[ -r $YVM_DIR/yvm.fish ]; and source $YVM_DIR/yvm.fish

@@ -26,16 +26,16 @@ bindsym Mod1+e exec "nautilus --no-desktop"
 bindsym $mod+Shift+q kill
 
 # workspace setup
-workspace 1 output HDMI-2
-workspace 2 output HDMI-2
-workspace 3 output HDMI-2
-workspace 4 output HDMI-2
-workspace 5 output DVI-D-0
-workspace 6 output DVI-D-0
-workspace 7 output DVI-D-0
-workspace 8 output DVI-D-0
-workspace 9 output DVI-D-0
-workspace 10 output HDMI-0
+workspace 1 output DP-0
+workspace 2 output DP-0
+workspace 3 output DP-0
+workspace 4 output DP-0
+workspace 5 output DP-0
+workspace 6 output DP-0
+workspace 7 output DP-0
+workspace 8 output DP-0
+workspace 9 output DP-0
+workspace 10 output DP-0
 bindsym $mod+Tab workspace back_and_forth
 
 # change focus
@@ -95,9 +95,6 @@ bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
@@ -169,17 +166,17 @@ bindsym $mod+r mode "resize"
 #bar {
 #        status_command i3status
 #}
-exec_always xmodmap ~/.xmodmap
-exec --no-startup-id ~/.screenlayout/default.sh
-exec --no-startup-id clipmenud
+# exec_always xmodmap ~/.xmodmap
+# exec --no-startup-id ~/.screenlayout/default.sh
+# exec --no-startup-id clipmenud
 
 # background
-exec feh --bg-scale /media/data/pictures/background/ori-and-the-blind-forest-spirit-tree-1e-1920x1080.jpg
+# exec feh --bg-scale /media/data/pictures/background/ori-and-the-blind-forest-spirit-tree-1e-1920x1080.jpg
 
 # rofi
-bindsym $mod+space exec rofi -show drun -show-icons
+bindsym $mod+space exec .config/polybar/material/scripts/launcher.sh
 bindsym $mod+ctrl+e exec $term -x ranger
-bindsym $mod+ctrl+w exec rofi -show win
+bindsym $mod+ctrl+w exec rofi -show window
 bindsym $mod+ctrl+v exec CM_LAUNCHER=rofi clipmenu
 bindsym $mod+ctrl+l exec ~/.config/rofi/scripts/lastpass-rofi.sh yulrizka@gmail.com
 bindsym $mod+ctrl+r exec rofi -show run
@@ -193,7 +190,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+shift+Return exec firefox -new-window
 
 # polybar
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh --material
 
 ## ScratchPad
 # Make the currently focused window a scratchpad
@@ -217,7 +214,7 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
-exec --no-startup-id dropbox start
+#exec --no-startup-id dropbox start
 
 # volume
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master Playback 4%+
