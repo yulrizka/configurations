@@ -67,4 +67,5 @@ alias api='cd ~/dev/shell/strawberry-api'
 alias e2e='cd ~/dev/shell/strawberry-e2e'
 alias e="op run --env-file=.env --"
 
-source $fish_config/config_local.fish
+source $__fish_config_dir/config_local.fish
+
