@@ -20,7 +20,7 @@ font pango:DroidSansMono 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym Mod1+e exec "nautilus --no-desktop"
+bindsym Mod1+e exec "nautilus"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -95,6 +95,9 @@ bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
@@ -117,7 +120,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id .config/polybar/material/scripts/powermenu.sh
 
 #alternative shutdown
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -164,7 +168,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#        status_command i3status
+#	mode dock
+#	position bottom
 #}
 # exec_always xmodmap ~/.xmodmap
 # exec --no-startup-id ~/.screenlayout/default.sh
@@ -178,7 +183,7 @@ bindsym $mod+space exec .config/polybar/material/scripts/launcher.sh
 bindsym $mod+ctrl+e exec $term -x ranger
 bindsym $mod+ctrl+w exec rofi -show window
 bindsym $mod+ctrl+v exec CM_LAUNCHER=rofi clipmenu
-bindsym $mod+ctrl+l exec ~/.config/rofi/scripts/lastpass-rofi.sh yulrizka@gmail.com
+bindsym $mod+ctrl+l exec rofimoji
 bindsym $mod+ctrl+r exec rofi -show run
 bindsym $mod+ctrl+c exec ~/.config/conky/toggle
 
@@ -186,10 +191,11 @@ bindsym $mod+ctrl+c exec ~/.config/conky/toggle
 bindsym $mod+ctrl+s exec gnome-screenshot -i
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec gnome-terminal
 bindsym $mod+shift+Return exec firefox -new-window
 
 # polybar
+#exec --no-startup-id polybar -q example -c /home/abi/.config/polybar/material/dummy.ini
 exec --no-startup-id ~/.config/polybar/launch.sh --material
 
 ## ScratchPad
@@ -214,9 +220,21 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
-#exec --no-startup-id dropbox start
+exec --no-startup-id dropbox start
+exec --no-startup-id i3-msg 'workspace 8; exec barrier'
+exec --no-startup-id copyq
+exec --no-startup-id pulseaudio
+exec --no-startup-id 1password
+#exec --no-startup-id pacmd set-default-sink 2
+#exec --no-startup-id ~/.config/i3/scripts/gnome-keyring.sh
+
 
 # volume
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master Playback 4%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse set Master Playback 4%-
 bindsym XF86AudioMute exec amixer -D pulse set Master Playback Switch toggle
+
+
+for_window [class="obsidian"] move scratchpad 
+for_window [class="copyq"] floating enable
+
