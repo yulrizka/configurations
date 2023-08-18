@@ -70,4 +70,4 @@ if test -n "$ENHANCD_COMMAND"
 end
 
 # bindings
-bind \ef '_enhancd_complete'
+bind \et '_enhancd_complete'
