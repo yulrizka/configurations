@@ -22,3 +22,5 @@ emacs/savehist
 emacs/projectile-bookmarks.eld
 emacs/recentf
 emacs/projectile.cache
+
+fish/config_local.fish

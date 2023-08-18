@@ -11,15 +11,19 @@ alias grbi='git rebase -i'
 alias gcp='git cherry-pick'
 alias ghpr='git fetch origin;git rebase origin/master && git push -u && hub pull-request'
 alias gitka='gitk --tags --branches'
+alias grhh='git resethead'
 alias gd='git diff'
 alias gl='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
 alias gicm='git commit -m'
 alias gim='git merge'
 alias gprs='git pull --rebase --autostash'
-alias dc='docker-compose'
-alias dcup='docker-compose up'
-alias dcupd='docker-compose up -d'
-alias dcup='docker-compose up'
+alias gsu='git branch --set-upstream-to=origin/(git branch --show-current) (git branch --show-current)'
+
+alias dc='docker compose'
+alias dcup='dc up'
+alias dcupd='dc up -d'
+alias dcup='dc up'
+alias dcrm='dc rm -fs'
 #alias klf='kubectl logs -f'
 alias r=ranger
 alias l='ls'
@@ -56,4 +60,7 @@ alias kcp='k config set-context --current --namespace=pineapple'
 
 alias be='cd ~/dev/shell/strawberry-be'
 alias api='cd ~/dev/shell/strawberry-api'
+alias e2e='cd ~/dev/shell/strawberry-e2e'
 alias e="op run --env-file=.env --"
+
+source $fish_config/config_local.fish
