@@ -1,0 +1,16 @@
+#!/bin/bash
+branch_name=$(git branch | grep \* | cut -d ' ' -f2)
+branch_master="master"
+if git branch | grep -q main; then
+  branch_master="main"
+fi
+echo "cleaning up $branch_name"
+echo -n "Sure (y/n) ? "
+read input < /dev/tty
+if [ "$input" == "y" ]; then
+  git checkout ${branch_master}
+  git branch -D $branch_name
+  git remote prune origin
+  git fetch origin
+  git pull --rebase --autostash
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "reset to the latest head"
+echo -n "Sure (y/n) ? "
+read input < /dev/tty
+if [ "$input" == "y" ]; then
+	git reset --hard HEAD
+fi
