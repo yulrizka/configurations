@@ -188,7 +188,7 @@ bindsym $mod+ctrl+r exec rofi -show run
 bindsym $mod+ctrl+c exec ~/.config/conky/toggle
 
 # app sortcut
-bindsym $mod+ctrl+s exec gnome-screenshot -i
+bindsym $mod+ctrl+s exec flameshot gui
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal

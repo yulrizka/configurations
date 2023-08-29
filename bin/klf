@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+  echo "usage: klf <pod> [container]"
+  exit 1
+fi
+
+# single container pod
+if [ "$#" -eq 1 ]; then
+  kubectl logs -f $1
+fi
+
+# multiple container pod
+if [ "$#" -eq 2 ]; then
+  kubectl logs -f $1 $2
+fi
