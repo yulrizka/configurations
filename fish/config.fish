@@ -65,7 +65,8 @@ alias kcp='k config set-context --current --namespace=pineapple'
 
 alias be='cd ~/dev/shell/strawberry-be'
 alias api='cd ~/dev/shell/strawberry-api'
-alias e2e='cd ~/dev/shell/strawberry-e2e'
+alias e2e='cd ~/dev/shell/strawberry-ui/strawberry-e2e'
+alias ui='cd ~/dev/shell/strawberry-ui'
 alias e="op run --env-file=.env --"
 
 source $__fish_config_dir/config_local.fish
